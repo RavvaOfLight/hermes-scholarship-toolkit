@@ -5,9 +5,9 @@
 
 **Find scholarships. Track them. Fill the forms.**
 
-[![Preview: the research report, the phone board, and the autofill side panel](docs/media/preview.gif)](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/releases/tag/v1.2.0)
+https://github.com/user-attachments/assets/a3711ce1-b74a-4d74-bb14-43f63ae34328
 
-▶ **[Watch the one-minute video](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/releases/tag/v1.2.0)** (shown with a fictional student; no real personal data).
+<sub>Shown with a fictional student; no real personal data appears in the video.</sub>
 
 Tools for finding, tracking, and applying for U.S. scholarships with
 [Hermes Agent](https://github.com/NousResearch/hermes-agent):
