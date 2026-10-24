@@ -4,6 +4,7 @@ batch records, broader query plans, per-student profiles, and gold scoring."""
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -60,9 +61,10 @@ def test_run_from_file_saves_pages_and_evidence(tmp_path: Path):
     saved = web_batch.load_page(tmp_path, OFFICIAL)
     assert saved is not None and "no application fee" in saved
     assert result["results"][0]["extracted_pages"][0]["saved_page"].endswith(".md")
-    lines = [json.loads(line) for line in (tmp_path / "evidence.jsonl").read_text().splitlines()]
+    lines = [json.loads(line) for line in (tmp_path / "evidence.jsonl").read_text(encoding="utf-8").splitlines()]
     assert {line["kind"] for line in lines} == {"search_result", "page"}
-    assert oct(web_batch.page_path(tmp_path, OFFICIAL).stat().st_mode & 0o777) == "0o600"
+    if os.name != "nt":  # Windows has no owner-only permission bits
+        assert oct(web_batch.page_path(tmp_path, OFFICIAL).stat().st_mode & 0o777) == "0o600"
 
 
 def test_page_urls_normalize_trailing_slash_and_fragment():
@@ -189,7 +191,7 @@ def test_audit_fetches_missing_pages_and_reports_unreadable(tmp_path: Path, prof
     assert calls and result["fetched_pages"] == 1
     assert set(result["unreadable_urls"]) == {APPLY, ABOUT}
     assert web_batch.load_page(workdir, OFFICIAL) is not None
-    assert json.loads((workdir / "audit.json").read_text())["schema_version"] == 1
+    assert json.loads((workdir / "audit.json").read_text(encoding="utf-8"))["schema_version"] == 1
 
 
 # --------------------------------------------------------------- notes & records
@@ -211,7 +213,7 @@ def test_long_amount_text_is_shortened_not_rejected(tmp_path: Path, profile_path
     result = api.add_candidate(profile_path, tmp_path / "c.json", record, today=TODAY.isoformat())
     assert result["ok"], result
     evaluated = api.evaluate(profile_path, tmp_path / "c.json", tmp_path / "e.json", today=TODAY.isoformat())
-    stored = json.loads((tmp_path / "e.json").read_text())
+    stored = json.loads((tmp_path / "e.json").read_text(encoding="utf-8"))
     row = (stored["verified"] + stored["needs_confirmation"])[0]
     assert len(row["amount"]["display"]) <= 200 and row["amount"]["display"].endswith("…")
     assert "Full award text" in row["evidence"]["amount"]
@@ -283,7 +285,7 @@ def profile_home(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
 
 def test_each_student_gets_their_own_profile_and_workspace(profile_home: Path):
     first = api.start_run(session_id="s1", student="Jordan")
-    assert first["profile"].endswith("scholarship-profiles/jordan.json") and first["student"] == "jordan"
+    assert Path(first["profile"]).as_posix().endswith("scholarship-profiles/jordan.json") and first["student"] == "jordan"
     clash = api.start_run(session_id="s1", student="Riley")
     assert clash["ok"] is False and "belongs to jordan" in clash["error"]
     default = api.start_run(session_id="s2", persistent=True)

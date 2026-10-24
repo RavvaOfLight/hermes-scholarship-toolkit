@@ -15,6 +15,7 @@ import scholarship_api as api
 
 REPO = Path(__file__).resolve().parents[1]
 BOARD = REPO / "apps" / "board"
+pytestmark = pytest.mark.skipif(sys.platform == "win32", reason="the board uses POSIX file locks, like its own tests")
 
 
 @pytest.fixture
@@ -66,15 +67,15 @@ def test_results_reach_the_board_and_a_second_run_merges(run_dir, board):
     first = api.send_to_board(run_dir, wait=20)
     assert first["ok"] is True and first["tracker"] == "search-default" and first["label"] == "Scholarship search"
     assert first["url"] == "http://127.0.0.1:8765"
-    registry = json.loads((board / "trackers.json").read_text())
+    registry = json.loads((board / "trackers.json").read_text(encoding="utf-8"))
     assert [t["id"] for t in registry] == ["search-default"] and registry[0]["awards"] > 0
     store = board / "stores" / "search-default.json"
-    rows = json.loads(store.read_text())
+    rows = json.loads(store.read_text(encoding="utf-8"))
     rows["scholarships"][0]["status"] = "applied"  # the student's own mark
     store.write_text(json.dumps(rows))
     assert api.send_to_board(run_dir, wait=20)["ok"] is True
-    assert json.loads(store.read_text())["scholarships"][0]["status"] == "applied"
-    assert len(json.loads((board / "trackers.json").read_text())) == 1
+    assert json.loads(store.read_text(encoding="utf-8"))["scholarships"][0]["status"] == "applied"
+    assert len(json.loads((board / "trackers.json").read_text(encoding="utf-8"))) == 1
     assert not list((board / "inbox").iterdir())  # requests and answers are cleaned up
 
 
@@ -101,7 +102,7 @@ def test_inbox_refuses_bad_requests(tmp_path):
     (inbox / "c.json").write_text(json.dumps({"run": str(tmp_path / "nowhere"), "tracker": "ok-id"}))
     env = {**os.environ, "BOARD_DATA_DIR": str(tmp_path / "data"), "BOARD_INBOX": str(inbox)}
     subprocess.run([sys.executable, str(BOARD / "inbox.py")], env=env, check=True, capture_output=True)
-    answers = {p.stem: json.loads(p.read_text()) for p in inbox.glob("*.done")}
+    answers = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in inbox.glob("*.done")}
     assert "unreadable" in answers["a"]["error"]
     assert "tracker id" in answers["b"]["error"]
     assert "no evaluated.json" in answers["c"]["error"]
