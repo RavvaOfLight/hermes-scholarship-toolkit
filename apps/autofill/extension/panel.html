@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scholarship Autofill</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img src="icons/icon32.png" alt="" width="20" height="20"><span>Autofill</span></div>
+    <div class="conn" id="conn" title=""><span class="dot"></span><span id="connText">Connecting…</span></div>
+  </header>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-tab="fill" class="on" aria-selected="true">Fill</button>
+    <button role="tab" data-tab="info" aria-selected="false">My info <span class="count" id="infoCount"></span></button>
+  </nav>
+
+  <main id="fill">
+    <section class="modes">
+      <button class="mode" id="mPoint" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 7-6 2-2 6z"/></svg>
+        <b>Point</b><small>Click boxes</small>
+      </button>
+      <button class="mode" id="mCircle" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c5 0 8 2.6 8 6.3S16.6 17 12 17c-2 0-3.3-.4-4.6-1.1L5 20l.6-4.6C4.6 14 4 12.2 4 10.3 4 6.6 7 4 12 4z" fill="none"/></svg>
+        <b>Circle</b><small>Draw around them</small>
+      </button>
+      <button class="mode" id="mPage" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6zM9 11h7M9 15h7M9 7h3" fill="none"/></svg>
+        <b>Whole page</b><small>Every box</small>
+      </button>
+    </section>
+
+    <div class="ask">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="none"/><path d="M16 16l4 4"/></svg>
+      <input id="ask" type="search" placeholder="Tell me what to fill, e.g. counselor email" autocomplete="off" spellcheck="false">
+    </div>
+    <div id="results" class="results" hidden></div>
+
+    <div id="hint" class="hint">Pick boxes on the form with <b>Point</b> or <b>Circle</b>, or type what you want filled. Nothing is typed until you press <b>Fill</b>.</div>
+    <div id="frames" class="frames" hidden></div>
+    <section id="rows" class="rows" aria-live="polite"></section>
+    <div id="done" class="done" hidden></div>
+
+    <footer class="bar" id="bar" hidden>
+      <button id="fillBtn" class="primary" type="button" disabled>Fill</button>
+      <button id="clearBtn" class="ghost" type="button">Clear</button>
+    </footer>
+    <p class="safety">Never submits · never clicks buttons · you check every box first</p>
+  </main>
+
+  <main id="info" hidden>
+    <p class="infohead" id="infohead">Saved on this computer only, nowhere else. Hermes can add these too: tell it something like <i>“save my counselor's email”</i>.</p>
+    <div id="infoBody"></div>
+    <p class="safety">Social Security numbers, passwords and bank details can't be saved here. You type those yourself.</p>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="config.js"></script>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Course #  Course Title                 S1   S2   Final  Credit
+2024-2025  Grade 11
+1003      ENGLISH 11 AP LANG/COMP      A    A-   A      1.000
+3130      PRE-CALCULUS HONORS          B+   A-   A-     1.000
+4720      AP PHYSICS 1                 B    B+   B+     1.000
+ENG 111   COLLEGE COMPOSITION I DE               A      3.000
+2025-2026  Grade 12
+1004      AP ENGLISH LIT/COMP          A    IP          1.000
+4500      AP PHYSICS C                 IP               1.000
+Term GPA: 3.91
+Cum GPA W 4.21  UW 3.89

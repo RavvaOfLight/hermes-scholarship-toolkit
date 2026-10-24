@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Scholarship Autofill</title>
+<style>
+  :root { --bg: #fbfaf7; --card: #ffffff; --ink: #1d232b; --soft: #4b5563; --line: #e4e1da; --accent: #2f6f5e; --warn: #8a5a00; --warnbg: #fff6e0; --code: #f1efe9; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #15181c; --card: #1d2126; --ink: #e8e6e1; --soft: #a9b0ba; --line: #2e333a; --accent: #7cc4ad; --warn: #f0c060; --warnbg: #2d2616; --code: #262b31; }
+  }
+  :root[data-theme="dark"] { --bg: #15181c; --card: #1d2126; --ink: #e8e6e1; --soft: #a9b0ba; --line: #2e333a; --accent: #7cc4ad; --warn: #f0c060; --warnbg: #2d2616; --code: #262b31; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 6px; }
+  h2 { font-size: 19px; margin: 34px 0 10px; }
+  p.lead { color: var(--soft); margin: 0 0 22px; }
+  ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 0; }
+  ol.steps > li { counter-increment: s; position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 14px 56px; margin: 0 0 10px; }
+  ol.steps > li::before { content: counter(s); position: absolute; left: 16px; top: 13px; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 700; display: grid; place-items: center; font-size: 14px; }
+  code, kbd { background: var(--code); border-radius: 5px; padding: 1px 6px; font: 14px ui-monospace, "SF Mono", Consolas, monospace; }
+  .copy { margin-left: 6px; font: inherit; font-size: 13px; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  .note { background: var(--warnbg); color: var(--ink); border-left: 4px solid var(--warn); border-radius: 6px; padding: 10px 14px; margin: 14px 0; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  small { color: var(--soft); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Install Scholarship Autofill</h1>
+  <p class="lead">A side panel that fills the repetitive boxes on scholarship applications with answers you save once. You check every box before it fills, and it never submits anything. This copy works on a Chromebook, or in Chrome or Edge on any computer. Nothing else needs installing.</p>
+
+  <div class="note"><b>It can't install itself when you plug the drive in.</b> Chromebooks (and Chrome) don't run anything automatically from a USB drive, and extensions from outside the Chrome Web Store have to be added by hand. It takes about two minutes, once per Chromebook.</div>
+
+  <h2>On a Chromebook</h2>
+  <ol class="steps">
+    <li><b>Copy the folder off the drive.</b> In the <b>Files</b> app, open the USB drive, then <b>Scholarship Autofill</b>, then the version you want:
+      <ul>
+        <li><b>Mine (locked answers)</b> comes with the owner's saved answers, locked with a passphrase.</li>
+        <li><b>For friends (blank)</b> starts empty.</li>
+      </ul>
+      Right-click the <b>Scholarship Autofill</b> folder inside it, choose <b>Copy</b>, open <b>My files</b> (or <b>Downloads</b>), and <b>Paste</b>.
+      <br><small>It has to live on the Chromebook. Loaded straight from the USB drive, it stops working when you unplug it.</small></li>
+    <li><b>Open the extensions page.</b> In Chrome, type <code>chrome://extensions</code> in the address bar and press Enter.<button class="copy" data-copy="chrome://extensions">Copy</button></li>
+    <li><b>Turn on Developer mode</b> with the switch at the top right of that page.</li>
+    <li><b>Click Load unpacked</b>, go to <b>My files</b>, click the <b>Scholarship Autofill</b> folder you pasted, and click <b>Open</b>.</li>
+    <li><b>Pin it.</b> Click the puzzle-piece button next to the address bar and pin <b>Scholarship Autofill</b>.</li>
+    <li><b>Open a scholarship application</b> and click the Scholarship Autofill button (or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>). The panel opens on the right.
+      <ul>
+        <li><b>Mine:</b> type the passphrase once. Your answers are added to this Chromebook and the passphrase isn't asked again.</li>
+        <li><b>Blank:</b> open <b>My info</b> and add your answers, or paste your transcript under <b>Classes</b>.</li>
+      </ul></li>
+  </ol>
+
+  <div class="note"><b>School Chromebooks:</b> if there's no Developer mode switch or no Load unpacked button, the school has blocked extensions from outside the Web Store, and this can't be installed on that Chromebook. Use a personal one.</div>
+
+  <h2>On Windows or Mac (Chrome or Edge)</h2>
+  <p>The same steps: copy the folder to your computer (for example to Documents), open <code>chrome://extensions</code> or <code>edge://extensions</code>, turn on Developer mode, click <b>Load unpacked</b>, and pick the folder. If the browser later asks to turn off developer-mode extensions, choose to keep it.</p>
+
+  <h2>Using it</h2>
+  <ul>
+    <li><b>Point</b> at boxes, <b>Circle</b> a group of them, or choose <b>Whole page</b>. Each box shows the exact text it will get. Nothing is typed until you press <b>Fill</b>, and <b>Undo</b> puts everything back.</li>
+    <li>It never clicks Submit, Next or Apply, and it blocks any submit the page tries while it fills. Read the form over and submit it yourself.</li>
+    <li>It leaves alone anything it isn't sure about, plus essays, signatures, "I certify" boxes, Social Security numbers and passwords.</li>
+  </ul>
+
+  <h2>Keep your answers safe</h2>
+  <ul>
+    <li>Your answers are saved in this browser only. <b>Removing the extension, or resetting (powerwashing) the Chromebook, deletes them.</b> Use <b>My info → Back up or move your answers → Download a backup</b> now and then, and keep that file private (it isn't locked).</li>
+    <li>To move to another computer: install it there, then choose <b>Restore from a backup…</b>.</li>
+    <li>Anyone who uses your Chrome profile can open the panel and see your answers. Sign out, or use your own profile, on shared computers.</li>
+  </ul>
+
+  <h2>Updating</h2>
+  <p>Copy the new <b>Scholarship Autofill</b> folder over the old one in My files, then press the reload arrow on its card in <code>chrome://extensions</code>. Your answers stay.</p>
+</main>
+<script>
+  document.querySelectorAll(".copy").forEach((b) => b.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; }
+    catch (e) { b.textContent = "Select it and copy"; }
+    setTimeout(() => { b.textContent = "Copy"; }, 2000);
+  }));
+</script>
+</body>
+</html>

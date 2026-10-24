@@ -1,0 +1,27 @@
+Testerson, Ava Marie                                                           Page 1 of 2
+State ID:     9999999999        12 Oak Lane                     Testville High School
+Birth Date:   04/15/2009        Testville, OH 12345             Lakeside County Schools
+
+Year: 2024-2025                                   Grade Level: 10
+Testville High School
+1 School Road Testville OH, 12345 (555) 555-0199 counselor@school.example.org
+ID      Course Title                     Attributes   FG   Credits Earned   Verified Credits
+11220   Hon World Literature             H            A    1.00
+32410   Statistics & Probability         DE,H         B+   1.00             1.00
+77105   Keyboarding Basics                            A    0.00
+Totals:                                                    2.00             1.00
+
+Year: 2025-2026                                   Grade Level: 11
+ID      Course Title                     Attributes   FG   Credits Earned   Verified Credits
+43380   AP Chemistry                     AP,H         A    1.00
+Summary
+GPA (District-Weighted with Honors points): 4.4000
+GPA (District-Weighted-no added value): 3.9000
+Rank (District Class Rank): 3 in class of 250
+(AP) Advanced Placement (DE) Dual Enrollment (H) Honors (IB) International Baccalaureate
+
+Work in Progress
+Year: 2025-2026
+Lakeside Regional STEM Academy
+ID      Course Title                     Attributes   Potential Credits
+11330   Composition 11 RSA               DE,H         1.00

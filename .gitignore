@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Never commit student data or run output
+scholarship-profile*.json
+*.profile.json
+profile.json
+queries.json
+queries.state.json
+candidates.json
+evaluated.json
+report.md
+deadlines.ics
+results.csv
+*.lock
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Board and autofill data (they live under ~/.hermes, but never commit a stray copy)
+trackers.json
+stores/
+.auth.json
+watch-state.json
+watch-latest.json
+companion.json
+data.json
+fills.jsonl
+seed.locked
+scholarship-autofill-backup-*.json
+history/
+node_modules/
+
+# Fictional test fixtures are the exception
+!apps/board/tests/fixtures/evaluated.json
+!apps/autofill/tests/fixtures/*.json

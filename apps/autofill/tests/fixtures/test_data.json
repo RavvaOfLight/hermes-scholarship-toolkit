@@ -1,0 +1,51 @@
+{
+ "values": {
+  "student.first_name": "Ava",
+  "student.middle_name": "Marie",
+  "student.last_name": "Testerson",
+  "student.email": "ava.t@example.com",
+  "student.phone": "5555550182",
+  "student.date_of_birth": "2009-04-15",
+  "student.state": "KS",
+  "student.gender": "Female",
+  "student.zip": "12345",
+  "student.county": "Lakeside",
+  "student.city": "Testville",
+  "parent1.relationship": "Mother",
+  "parent1.first_name": "Maria",
+  "parent1.email": "maria@example.com",
+  "school.counselor_email": "dlee@school.example.org",
+  "student.pronouns": "she/her",
+  "student.citizenship": "U.S. citizen",
+  "student.grade_level": "12th grade",
+  "financial.financial_need": "Yes",
+  "financial.sai": "2400",
+  "financial.family_income": "52000"
+ },
+ "lists": {
+  "courses": [
+   {
+    "name": "AP Biology",
+    "level": "AP",
+    "grade_level": "11th grade",
+    "grade": "A",
+    "credits": "1.0",
+    "status": "Completed"
+   },
+   {
+    "name": "English 10 Honors",
+    "level": "Honors",
+    "grade_level": "10th grade",
+    "grade": "A-",
+    "credits": "1.0",
+    "status": "Completed"
+   },
+   {
+    "name": "AP Calculus BC",
+    "level": "AP",
+    "grade_level": "12th grade",
+    "status": "In progress"
+   }
+  ]
+ }
+}

@@ -1,0 +1,46 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.11", "3.12", "3.13"]
+        include:
+          - os: macos-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install test tools
+        run: python -m pip install pytest pyyaml tzdata
+      - name: Validate the source registry
+        run: python skills/scholarship-research/scripts/pipeline.py check-registry
+      - name: Research skill tests
+        run: python -m pytest -q tests
+      - name: Board and autofill tests (POSIX only; they use file locks)
+        if: runner.os != 'Windows'
+        run: python -m pytest -q apps/board/tests apps/autofill/tests
+
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Autofill label matching
+        run: node --test "apps/autofill/tests/*.test.mjs"

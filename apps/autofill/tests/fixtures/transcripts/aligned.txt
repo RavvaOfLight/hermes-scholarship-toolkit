@@ -1,0 +1,26 @@
+TESTVILLE HIGH SCHOOL - OFFICIAL TRANSCRIPT
+Student: Ava Testerson        DOB: 04/15/2009       Student ID: 1234567
+Address: 1 Main St, Testville, OH 12345
+SSN: XXX-XX-1234
+
+Grade 9    2022-2023
+Course                         Grade   Credit
+English 9 Honors               A       1.00
+Algebra I                      B+      1.00
+Biology                        A-      1.00
+World History                  A       1.00
+Spanish I                      A       1.00
+Physical Education             P       0.50
+
+Grade 10   2023-2024
+Course                         Grade   Credit
+English 10 H                   A-      1.00
+Geometry                       B       1.00
+AP World History               A       1.00
+Chemistry                      B+      1.00
+Spanish II                     A       1.00
+
+Cumulative GPA (Unweighted): 3.78 / 4.00
+Cumulative GPA (Weighted): 4.12
+Class Rank: 15 of 312
+Page 1 of 1

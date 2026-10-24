@@ -1,0 +1,2072 @@
+{
+  "schema_version": 2,
+  "last_reviewed": "2026-10-22",
+  "notes": "official_domains decide which pages can prove a record through method trusted_registry. Add a source only after confirming its domain on the organization's own site. Triggers: keyword groups (major/affiliation/military/identity) match whole words in the profile, any group by default or every group with match=all; states, search_modes, and true_fields are filters that must all hold. Identity triggers require identity-search consent.",
+  "discovery_domains": [
+    "scholarships.com",
+    "scholarships360.org",
+    "fastweb.com",
+    "bold.org",
+    "niche.com",
+    "unigo.com",
+    "goingmerry.com",
+    "appily.com",
+    "petersons.com",
+    "sallie.com",
+    "myscholly.com",
+    "scholly.com",
+    "collegescholarships.org",
+    "scholarshipowl.com",
+    "studentscholarships.org",
+    "collegexpress.com",
+    "cappex.com",
+    "chegg.com",
+    "grantable.co",
+    "raise.me",
+    "collegeraptor.com",
+    "scholarshipportal.com",
+    "accessscholarships.com",
+    "collegevine.com",
+    "bigfuture.collegeboard.org",
+    "careeronestop.org"
+  ],
+  "social_domains": [
+    "facebook.com",
+    "instagram.com",
+    "tiktok.com",
+    "x.com",
+    "twitter.com",
+    "youtube.com",
+    "reddit.com",
+    "pinterest.com",
+    "linkedin.com",
+    "quora.com",
+    "threads.net"
+  ],
+  "sources": [
+    {
+      "name": "Alabama Commission on Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ache.edu"
+      ],
+      "homepage": "https://www.ache.edu/",
+      "purpose": "official Alabama state aid",
+      "trigger": {
+        "states": [
+          "Alabama"
+        ]
+      },
+      "query_template": "ACHE Alabama state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Alaska Commission on Postsecondary Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "acpe.alaska.gov"
+      ],
+      "homepage": "https://acpe.alaska.gov/",
+      "purpose": "official Alaska state aid",
+      "trigger": {
+        "states": [
+          "Alaska"
+        ]
+      },
+      "query_template": "ACPE Alaska state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Arizona Board of Regents (state student aid)",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "azregents.edu",
+        "highered.az.gov",
+        "azgrants.az.gov"
+      ],
+      "homepage": "https://azregents.edu/",
+      "purpose": "official Arizona state aid",
+      "trigger": {
+        "states": [
+          "Arizona"
+        ]
+      },
+      "query_template": "Arizona Board of Regents state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Arkansas Division of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "adhe.edu"
+      ],
+      "homepage": "https://adhe.edu/",
+      "purpose": "official Arkansas state aid",
+      "trigger": {
+        "states": [
+          "Arkansas"
+        ]
+      },
+      "query_template": "ADHE Arkansas state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "California Student Aid Commission",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "csac.ca.gov"
+      ],
+      "homepage": "https://www.csac.ca.gov/",
+      "purpose": "official California state aid",
+      "trigger": {
+        "states": [
+          "California"
+        ]
+      },
+      "query_template": "CSAC California state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Colorado Department of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "cdhe.colorado.gov"
+      ],
+      "homepage": "https://cdhe.colorado.gov/",
+      "purpose": "official Colorado state aid",
+      "trigger": {
+        "states": [
+          "Colorado"
+        ]
+      },
+      "query_template": "CDHE Colorado state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Connecticut Office of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "portal.ct.gov"
+      ],
+      "homepage": "https://portal.ct.gov/ohe",
+      "purpose": "official Connecticut state aid",
+      "trigger": {
+        "states": [
+          "Connecticut"
+        ]
+      },
+      "query_template": "Connecticut Office of Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Delaware Higher Education Office",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "education.delaware.gov"
+      ],
+      "homepage": "https://education.delaware.gov/",
+      "purpose": "official Delaware state aid",
+      "trigger": {
+        "states": [
+          "Delaware"
+        ]
+      },
+      "query_template": "Delaware Higher Education Office state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "DC Office of the State Superintendent of Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "osse.dc.gov"
+      ],
+      "homepage": "https://osse.dc.gov/dctag",
+      "purpose": "official District of Columbia state aid",
+      "trigger": {
+        "states": [
+          "District of Columbia"
+        ]
+      },
+      "query_template": "OSSE DC District of Columbia state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Florida Office of Student Financial Assistance",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "floridastudentfinancialaidsg.org",
+        "fldoe.org"
+      ],
+      "homepage": "https://www.floridastudentfinancialaidsg.org/",
+      "purpose": "official Florida state aid",
+      "trigger": {
+        "states": [
+          "Florida"
+        ]
+      },
+      "query_template": "Florida Office of Student Financial Assistance state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Georgia Student Finance Commission",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "gafutures.org",
+        "gsfc.georgia.gov"
+      ],
+      "homepage": "https://www.gafutures.org/",
+      "purpose": "official Georgia state aid",
+      "trigger": {
+        "states": [
+          "Georgia"
+        ]
+      },
+      "query_template": "GSFC GAfutures Georgia state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "University of Hawaii System (state student aid)",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "hawaii.edu"
+      ],
+      "homepage": "https://www.hawaii.edu/",
+      "purpose": "official Hawaii state aid",
+      "trigger": {
+        "states": [
+          "Hawaii"
+        ]
+      },
+      "query_template": "University of Hawaii state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Idaho State Board of Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "boardofed.idaho.gov"
+      ],
+      "homepage": "https://boardofed.idaho.gov/",
+      "purpose": "official Idaho state aid",
+      "trigger": {
+        "states": [
+          "Idaho"
+        ]
+      },
+      "query_template": "Idaho State Board of Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Illinois Student Assistance Commission",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "isac.org"
+      ],
+      "homepage": "https://www.isac.org/",
+      "purpose": "official Illinois state aid",
+      "trigger": {
+        "states": [
+          "Illinois"
+        ]
+      },
+      "query_template": "ISAC Illinois state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Indiana Commission for Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "in.gov"
+      ],
+      "homepage": "https://www.in.gov/che/",
+      "purpose": "official Indiana state aid",
+      "trigger": {
+        "states": [
+          "Indiana"
+        ]
+      },
+      "query_template": "Indiana Commission for Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Iowa College Aid",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "educate.iowa.gov",
+        "iowacollegeaid.gov"
+      ],
+      "homepage": "https://educate.iowa.gov/",
+      "purpose": "official Iowa state aid",
+      "trigger": {
+        "states": [
+          "Iowa"
+        ]
+      },
+      "query_template": "Iowa College Aid state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Kansas Board of Regents",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "kansasregents.gov",
+        "kansasregents.org"
+      ],
+      "homepage": "https://kansasregents.gov/",
+      "purpose": "official Kansas state aid",
+      "trigger": {
+        "states": [
+          "Kansas"
+        ]
+      },
+      "query_template": "Kansas Board of Regents state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Kentucky Higher Education Assistance Authority",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "kheaa.com"
+      ],
+      "homepage": "https://www.kheaa.com/",
+      "purpose": "official Kentucky state aid",
+      "trigger": {
+        "states": [
+          "Kentucky"
+        ]
+      },
+      "query_template": "KHEAA Kentucky state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Louisiana Office of Student Financial Assistance",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "osfa.la.gov"
+      ],
+      "homepage": "https://www.osfa.la.gov/",
+      "purpose": "official Louisiana state aid",
+      "trigger": {
+        "states": [
+          "Louisiana"
+        ]
+      },
+      "query_template": "LOSFA Louisiana state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Finance Authority of Maine",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "famemaine.com"
+      ],
+      "homepage": "https://www.famemaine.com/",
+      "purpose": "official Maine state aid",
+      "trigger": {
+        "states": [
+          "Maine"
+        ]
+      },
+      "query_template": "FAME Maine state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Maryland Higher Education Commission",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "mhec.maryland.gov"
+      ],
+      "homepage": "https://mhec.maryland.gov/",
+      "purpose": "official Maryland state aid",
+      "trigger": {
+        "states": [
+          "Maryland"
+        ]
+      },
+      "query_template": "MHEC Maryland state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Massachusetts Office of Student Financial Assistance",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "mass.edu"
+      ],
+      "homepage": "https://www.mass.edu/osfa/",
+      "purpose": "official Massachusetts state aid",
+      "trigger": {
+        "states": [
+          "Massachusetts"
+        ]
+      },
+      "query_template": "Massachusetts OSFA state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "MI Student Aid",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "michigan.gov"
+      ],
+      "homepage": "https://www.michigan.gov/mistudentaid",
+      "purpose": "official Michigan state aid",
+      "trigger": {
+        "states": [
+          "Michigan"
+        ]
+      },
+      "query_template": "MI Student Aid Michigan state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Minnesota Office of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ohe.state.mn.us",
+        "ohe.mn.gov"
+      ],
+      "homepage": "https://www.ohe.state.mn.us/",
+      "purpose": "official Minnesota state aid",
+      "trigger": {
+        "states": [
+          "Minnesota"
+        ]
+      },
+      "query_template": "Minnesota Office of Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Mississippi Office of Student Financial Aid",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "msfinancialaid.org"
+      ],
+      "homepage": "https://www.msfinancialaid.org/",
+      "purpose": "official Mississippi state aid",
+      "trigger": {
+        "states": [
+          "Mississippi"
+        ]
+      },
+      "query_template": "Mississippi Office of Student Financial Aid state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Missouri Department of Higher Education and Workforce Development",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "dhewd.mo.gov"
+      ],
+      "homepage": "https://dhewd.mo.gov/",
+      "purpose": "official Missouri state aid",
+      "trigger": {
+        "states": [
+          "Missouri"
+        ]
+      },
+      "query_template": "Missouri DHEWD state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Montana University System",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "mus.edu"
+      ],
+      "homepage": "https://mus.edu/",
+      "purpose": "official Montana state aid",
+      "trigger": {
+        "states": [
+          "Montana"
+        ]
+      },
+      "query_template": "Montana University System state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Nebraska Coordinating Commission for Postsecondary Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ccpe.nebraska.gov"
+      ],
+      "homepage": "https://ccpe.nebraska.gov/",
+      "purpose": "official Nebraska state aid",
+      "trigger": {
+        "states": [
+          "Nebraska"
+        ]
+      },
+      "query_template": "Nebraska Coordinating Commission for Postsecondary Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Nevada State Treasurer and Nevada System of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "nevadatreasurer.gov",
+        "nevadatreasurer.nv.gov",
+        "nshe.nevada.edu"
+      ],
+      "homepage": "https://www.nevadatreasurer.gov/",
+      "purpose": "official Nevada state aid",
+      "trigger": {
+        "states": [
+          "Nevada"
+        ]
+      },
+      "query_template": "Nevada Millennium Scholarship state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "New Hampshire Department of Education, Division of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "education.nh.gov"
+      ],
+      "homepage": "https://www.education.nh.gov/",
+      "purpose": "official New Hampshire state aid",
+      "trigger": {
+        "states": [
+          "New Hampshire"
+        ]
+      },
+      "query_template": "New Hampshire Department of Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "New Jersey Higher Education Student Assistance Authority",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "hesaa.org"
+      ],
+      "homepage": "https://www.hesaa.org/",
+      "purpose": "official New Jersey state aid",
+      "trigger": {
+        "states": [
+          "New Jersey"
+        ]
+      },
+      "query_template": "HESAA New Jersey state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "New Mexico Higher Education Department",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "hed.nm.gov"
+      ],
+      "homepage": "https://hed.nm.gov/",
+      "purpose": "official New Mexico state aid",
+      "trigger": {
+        "states": [
+          "New Mexico"
+        ]
+      },
+      "query_template": "New Mexico Higher Education Department state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "New York State Higher Education Services Corporation",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "hesc.ny.gov"
+      ],
+      "homepage": "https://hesc.ny.gov/",
+      "purpose": "official New York state aid",
+      "trigger": {
+        "states": [
+          "New York"
+        ]
+      },
+      "query_template": "HESC New York state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "North Carolina State Education Assistance Authority",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ncseaa.edu",
+        "cfnc.org"
+      ],
+      "homepage": "https://www.ncseaa.edu/",
+      "purpose": "official North Carolina state aid",
+      "trigger": {
+        "states": [
+          "North Carolina"
+        ]
+      },
+      "query_template": "NCSEAA CFNC North Carolina state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "North Dakota University System",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ndus.edu"
+      ],
+      "homepage": "https://www.ndus.edu/",
+      "purpose": "official North Dakota state aid",
+      "trigger": {
+        "states": [
+          "North Dakota"
+        ]
+      },
+      "query_template": "North Dakota University System state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Ohio Department of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "highered.ohio.gov",
+        "ohiohighered.org"
+      ],
+      "homepage": "https://highered.ohio.gov/",
+      "purpose": "official Ohio state aid",
+      "trigger": {
+        "states": [
+          "Ohio"
+        ]
+      },
+      "query_template": "Ohio Department of Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Oklahoma State Regents for Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "okhighered.org"
+      ],
+      "homepage": "https://okhighered.org/",
+      "purpose": "official Oklahoma state aid",
+      "trigger": {
+        "states": [
+          "Oklahoma"
+        ]
+      },
+      "query_template": "Oklahoma State Regents for Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Oregon Office of Student Access and Completion",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "oregonstudentaid.gov"
+      ],
+      "homepage": "https://oregonstudentaid.gov/",
+      "purpose": "official Oregon state aid",
+      "trigger": {
+        "states": [
+          "Oregon"
+        ]
+      },
+      "query_template": "Oregon Student Aid OSAC state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Pennsylvania Higher Education Assistance Agency",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "pheaa.org"
+      ],
+      "homepage": "https://www.pheaa.org/",
+      "purpose": "official Pennsylvania state aid",
+      "trigger": {
+        "states": [
+          "Pennsylvania"
+        ]
+      },
+      "query_template": "PHEAA Pennsylvania state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Rhode Island Office of the Postsecondary Commissioner",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "riopc.edu"
+      ],
+      "homepage": "https://riopc.edu/",
+      "purpose": "official Rhode Island state aid",
+      "trigger": {
+        "states": [
+          "Rhode Island"
+        ]
+      },
+      "query_template": "Rhode Island Office of the Postsecondary Commissioner state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "South Carolina Commission on Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "che.sc.gov"
+      ],
+      "homepage": "https://www.che.sc.gov/",
+      "purpose": "official South Carolina state aid",
+      "trigger": {
+        "states": [
+          "South Carolina"
+        ]
+      },
+      "query_template": "South Carolina Commission on Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "South Dakota Board of Regents",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "sdbor.edu"
+      ],
+      "homepage": "https://sdbor.edu/",
+      "purpose": "official South Dakota state aid",
+      "trigger": {
+        "states": [
+          "South Dakota"
+        ]
+      },
+      "query_template": "South Dakota Board of Regents state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Tennessee Student Assistance Corporation",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "tn.gov"
+      ],
+      "homepage": "https://www.tn.gov/collegepays.html",
+      "purpose": "official Tennessee state aid",
+      "trigger": {
+        "states": [
+          "Tennessee"
+        ]
+      },
+      "query_template": "TSAC Tennessee state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Texas Higher Education Coordinating Board",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "highered.texas.gov",
+        "mytexasfuture.org"
+      ],
+      "homepage": "https://www.highered.texas.gov/",
+      "purpose": "official Texas state aid",
+      "trigger": {
+        "states": [
+          "Texas"
+        ]
+      },
+      "query_template": "Texas Higher Education Coordinating Board state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Utah System of Higher Education",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "ushe.edu"
+      ],
+      "homepage": "https://ushe.edu/",
+      "purpose": "official Utah state aid",
+      "trigger": {
+        "states": [
+          "Utah"
+        ]
+      },
+      "query_template": "Utah System of Higher Education state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Vermont Student Assistance Corporation",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "vsac.org"
+      ],
+      "homepage": "https://www.vsac.org/",
+      "purpose": "official Vermont state aid",
+      "trigger": {
+        "states": [
+          "Vermont"
+        ]
+      },
+      "query_template": "VSAC Vermont state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "State Council of Higher Education for Virginia",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "schev.edu"
+      ],
+      "homepage": "https://www.schev.edu/",
+      "purpose": "official Virginia state aid",
+      "trigger": {
+        "states": [
+          "Virginia"
+        ]
+      },
+      "query_template": "SCHEV Virginia state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Washington Student Achievement Council",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "wsac.wa.gov"
+      ],
+      "homepage": "https://wsac.wa.gov/",
+      "purpose": "official Washington state aid",
+      "trigger": {
+        "states": [
+          "Washington"
+        ]
+      },
+      "query_template": "WSAC Washington state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "West Virginia Higher Education Policy Commission",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "wvhepc.edu",
+        "cfwv.com"
+      ],
+      "homepage": "https://www.wvhepc.edu/",
+      "purpose": "official West Virginia state aid",
+      "trigger": {
+        "states": [
+          "West Virginia"
+        ]
+      },
+      "query_template": "West Virginia Higher Education Policy Commission state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Wisconsin Higher Educational Aids Board",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "heab.state.wi.us"
+      ],
+      "homepage": "https://heab.state.wi.us/",
+      "purpose": "official Wisconsin state aid",
+      "trigger": {
+        "states": [
+          "Wisconsin"
+        ]
+      },
+      "query_template": "Wisconsin HEAB state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "Wyoming Department of Education (Hathaway Scholarship)",
+      "role": "state_agency",
+      "tier": 3,
+      "official_domains": [
+        "edu.wyoming.gov"
+      ],
+      "homepage": "https://edu.wyoming.gov/",
+      "purpose": "official Wyoming state aid",
+      "trigger": {
+        "states": [
+          "Wyoming"
+        ]
+      },
+      "query_template": "Wyoming Hathaway Scholarship state grants and scholarships {state_aid_stage} {entry_year}-{next_year}"
+    },
+    {
+      "name": "ASME Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "asme.org"
+      ],
+      "homepage": "https://www.asme.org/asme-programs/students-and-faculty/scholarships",
+      "purpose": "mechanical-engineering professional scholarships",
+      "trigger": {
+        "major_keywords": [
+          "mechanical engineering",
+          "engineering",
+          "mechatronics"
+        ]
+      },
+      "query_template": "ASME scholarships {applicant_stage} {major} {entry_year} application"
+    },
+    {
+      "name": "SME Education Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "smeef.org"
+      ],
+      "homepage": "https://www.smeef.org/",
+      "purpose": "manufacturing and engineering scholarships",
+      "trigger": {
+        "major_keywords": [
+          "manufacturing",
+          "mechanical engineering",
+          "engineering",
+          "mechatronics",
+          "automation"
+        ]
+      },
+      "query_template": "SME Education Foundation scholarships {applicant_stage} {major} {entry_year} application"
+    },
+    {
+      "name": "SAE International Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "sae.org"
+      ],
+      "homepage": "https://www.sae.org/",
+      "purpose": "mobility and engineering scholarships",
+      "trigger": {
+        "major_keywords": [
+          "automotive",
+          "aerospace",
+          "mechanical engineering",
+          "engineering",
+          "mobility"
+        ]
+      },
+      "query_template": "SAE International scholarships {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "NSPE Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "nspe.org"
+      ],
+      "homepage": "https://www.nspe.org/",
+      "purpose": "engineering professional-society scholarships",
+      "trigger": {
+        "major_keywords": [
+          "engineering"
+        ]
+      },
+      "query_template": "National Society of Professional Engineers scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AIAA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aiaa.org"
+      ],
+      "homepage": "https://aiaa.org/",
+      "purpose": "aerospace scholarships",
+      "trigger": {
+        "major_keywords": [
+          "aerospace",
+          "aeronautical",
+          "aeronautics",
+          "astronautical",
+          "astronautics"
+        ]
+      },
+      "query_template": "AIAA aerospace scholarships {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "ASCE Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "asce.org"
+      ],
+      "homepage": "https://www.asce.org/",
+      "purpose": "civil-engineering scholarships",
+      "trigger": {
+        "major_keywords": [
+          "civil engineering",
+          "structural engineering",
+          "environmental engineering",
+          "construction engineering"
+        ]
+      },
+      "query_template": "ASCE civil engineering scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AIChE Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aiche.org"
+      ],
+      "homepage": "https://www.aiche.org/",
+      "purpose": "chemical-engineering scholarships",
+      "trigger": {
+        "major_keywords": [
+          "chemical engineering",
+          "biomolecular engineering",
+          "biochemical engineering"
+        ]
+      },
+      "query_template": "AIChE chemical engineering scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AWS Foundation Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aws.org"
+      ],
+      "homepage": "https://www.aws.org/",
+      "purpose": "welding and fabrication scholarships",
+      "trigger": {
+        "major_keywords": [
+          "welding",
+          "welder",
+          "fabrication",
+          "metallurgy",
+          "materials joining"
+        ]
+      },
+      "query_template": "American Welding Society Foundation scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "mikeroweWORKS Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "mikeroweworks.org"
+      ],
+      "homepage": "https://mikeroweworks.org/",
+      "purpose": "skilled-trades scholarships",
+      "trigger": {
+        "major_keywords": [
+          "welding",
+          "electrician",
+          "electrical technology",
+          "plumbing",
+          "hvac",
+          "carpentry",
+          "construction",
+          "automotive technology",
+          "diesel",
+          "mechanic",
+          "machining",
+          "skilled trades",
+          "trade",
+          "trades",
+          "apprenticeship"
+        ]
+      },
+      "query_template": "mikeroweWORKS Foundation Work Ethic scholarship {entry_year} application"
+    },
+    {
+      "name": "AGC Education and Research Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "agc.org"
+      ],
+      "homepage": "https://www.agc.org/",
+      "purpose": "construction scholarships",
+      "trigger": {
+        "major_keywords": [
+          "construction",
+          "construction management",
+          "civil engineering"
+        ]
+      },
+      "query_template": "AGC Education and Research Foundation construction scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AOPA Flight Training Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aopa.org"
+      ],
+      "homepage": "https://www.aopa.org/training-and-safety/students/aopa-flight-training-scholarships",
+      "purpose": "aviation and flight-training scholarships",
+      "trigger": {
+        "major_keywords": [
+          "aviation",
+          "pilot",
+          "flight",
+          "aeronautical science",
+          "professional flight",
+          "aviation maintenance"
+        ]
+      },
+      "query_template": "AOPA flight training scholarships {entry_year} application"
+    },
+    {
+      "name": "ISC2 Center for Cyber Safety and Education",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "iamcybersafe.org"
+      ],
+      "homepage": "https://www.iamcybersafe.org/s/scholarships",
+      "purpose": "cybersecurity scholarships",
+      "trigger": {
+        "major_keywords": [
+          "cybersecurity",
+          "cyber security",
+          "information security",
+          "information assurance",
+          "cyber"
+        ]
+      },
+      "query_template": "Center for Cyber Safety and Education cybersecurity scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AICPA Foundation Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aicpa-cima.com"
+      ],
+      "homepage": "https://www.aicpa-cima.com/resources/landing/about-the-aicpa-foundation",
+      "purpose": "accounting scholarships",
+      "trigger": {
+        "major_keywords": [
+          "accounting",
+          "accountancy"
+        ]
+      },
+      "query_template": "AICPA Foundation accounting scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Foundation of the National Student Nurses' Association",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "nsna.org"
+      ],
+      "homepage": "https://www.nsna.org/",
+      "purpose": "nursing scholarships",
+      "trigger": {
+        "major_keywords": [
+          "nursing",
+          "nurse"
+        ]
+      },
+      "query_template": "Foundation of the National Student Nurses Association scholarship {entry_year}"
+    },
+    {
+      "name": "National Beta Scholarship",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "betaclub.org"
+      ],
+      "homepage": "https://www.betaclub.org/",
+      "purpose": "National Beta member scholarship",
+      "trigger": {
+        "affiliation_keywords": [
+          "beta club",
+          "national beta"
+        ]
+      },
+      "query_template": "National Beta scholarship {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "Rotary Scholarships",
+      "role": "official_sponsor_or_local_club",
+      "tier": 4,
+      "official_domains": [
+        "rotary.org"
+      ],
+      "homepage": "https://www.rotary.org/",
+      "purpose": "Rotary or Interact scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "rotary",
+          "interact",
+          "rotaract"
+        ]
+      },
+      "query_template": "Rotary Interact scholarship {city} {state} {graduation_year} application"
+    },
+    {
+      "name": "FIRST Scholarships",
+      "role": "official_program",
+      "tier": 4,
+      "official_domains": [
+        "firstinspires.org"
+      ],
+      "homepage": "https://www.firstinspires.org/resources/library/scholarships",
+      "purpose": "FIRST participant scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "first robotics",
+          "frc",
+          "ftc",
+          "first tech challenge",
+          "first robotics competition",
+          "first lego league"
+        ]
+      },
+      "query_template": "FIRST scholarship program {entry_year} application"
+    },
+    {
+      "name": "National Honor Society Scholarship",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "nationalhonorsociety.org",
+        "nhs.us"
+      ],
+      "homepage": "https://www.nationalhonorsociety.org/",
+      "purpose": "National Honor Society member scholarship",
+      "trigger": {
+        "affiliation_keywords": [
+          "national honor society",
+          "nhs"
+        ]
+      },
+      "query_template": "National Honor Society scholarship {graduation_year} application"
+    },
+    {
+      "name": "National FFA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "ffa.org"
+      ],
+      "homepage": "https://www.ffa.org/",
+      "purpose": "FFA member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "ffa",
+          "future farmers"
+        ]
+      },
+      "query_template": "National FFA scholarships {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "4-H Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "4-h.org"
+      ],
+      "homepage": "https://4-h.org/",
+      "purpose": "4-H member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "4-h",
+          "4h"
+        ]
+      },
+      "query_template": "4-H scholarships {state} {entry_year} application"
+    },
+    {
+      "name": "National Eagle Scout Association Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "nesa.org"
+      ],
+      "homepage": "https://nesa.org/",
+      "purpose": "Eagle Scout scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "eagle scout"
+        ]
+      },
+      "query_template": "National Eagle Scout Association scholarship {entry_year} application"
+    },
+    {
+      "name": "SkillsUSA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "skillsusa.org"
+      ],
+      "homepage": "https://www.skillsusa.org/",
+      "purpose": "career and technical student scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "skillsusa",
+          "skills usa"
+        ]
+      },
+      "query_template": "SkillsUSA scholarships {entry_year} application"
+    },
+    {
+      "name": "DECA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "deca.org"
+      ],
+      "homepage": "https://www.deca.org/",
+      "purpose": "DECA member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "deca"
+        ]
+      },
+      "query_template": "DECA scholarships {entry_year} application"
+    },
+    {
+      "name": "FBLA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "fbla.org"
+      ],
+      "homepage": "https://www.fbla.org/",
+      "purpose": "FBLA member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "fbla",
+          "future business leaders"
+        ]
+      },
+      "query_template": "FBLA scholarships {entry_year} application"
+    },
+    {
+      "name": "HOSA Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "hosa.org"
+      ],
+      "homepage": "https://hosa.org/",
+      "purpose": "HOSA member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "hosa",
+          "future health professionals"
+        ]
+      },
+      "query_template": "HOSA Future Health Professionals scholarships {entry_year}"
+    },
+    {
+      "name": "Key Club Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "keyclub.org"
+      ],
+      "homepage": "https://www.keyclub.org/",
+      "purpose": "Key Club member scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "key club"
+        ]
+      },
+      "query_template": "Key Club International scholarships {entry_year} application"
+    },
+    {
+      "name": "American Legion Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "legion.org"
+      ],
+      "homepage": "https://www.legion.org/",
+      "purpose": "American Legion family scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "american legion",
+          "legion auxiliary",
+          "sons of the american legion",
+          "boys state",
+          "girls state"
+        ]
+      },
+      "query_template": "American Legion scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Coca-Cola Scholars Program",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "coca-colascholarsfoundation.org"
+      ],
+      "homepage": "https://www.coca-colascholarsfoundation.org/",
+      "purpose": "national merit and leadership scholarship for seniors",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ]
+      },
+      "query_template": "Coca-Cola Scholars Program {graduation_year} application"
+    },
+    {
+      "name": "Elks National Foundation Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "elks.org"
+      ],
+      "homepage": "https://www.elks.org/scholars/",
+      "purpose": "Elks Most Valuable Student scholarship",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ]
+      },
+      "query_template": "Elks National Foundation Most Valuable Student scholarship {entry_year}"
+    },
+    {
+      "name": "Burger King Foundation Scholars",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "burgerkingfoundation.org"
+      ],
+      "homepage": "https://www.burgerkingfoundation.org/",
+      "purpose": "national scholarship for seniors",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ]
+      },
+      "query_template": "Burger King Foundation Scholars program {entry_year} application"
+    },
+    {
+      "name": "Jack Kent Cooke Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "jkcf.org"
+      ],
+      "homepage": "https://www.jkcf.org/",
+      "purpose": "need-based scholarships for high-achieving students",
+      "trigger": {
+        "search_modes": [
+          "high_school",
+          "transfer"
+        ],
+        "true_fields": [
+          "student.financial_need"
+        ]
+      },
+      "query_template": "Jack Kent Cooke Foundation scholarship {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "QuestBridge",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "questbridge.org"
+      ],
+      "homepage": "https://www.questbridge.org/",
+      "purpose": "National College Match for high-achieving students with need",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ],
+        "true_fields": [
+          "student.financial_need"
+        ]
+      },
+      "query_template": "QuestBridge National College Match {entry_year} application"
+    },
+    {
+      "name": "Dell Scholars Program",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "dellscholars.org"
+      ],
+      "homepage": "https://www.dellscholars.org/",
+      "purpose": "need-based scholarship with college-success support",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ],
+        "true_fields": [
+          "student.financial_need"
+        ]
+      },
+      "query_template": "Dell Scholars Program {graduation_year} application"
+    },
+    {
+      "name": "Horatio Alger Association Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "horatioalger.org"
+      ],
+      "homepage": "https://horatioalger.org/scholarships-and-services/",
+      "purpose": "need-based scholarships for students who have faced adversity",
+      "trigger": {
+        "search_modes": [
+          "high_school",
+          "trade_certificate"
+        ],
+        "true_fields": [
+          "student.financial_need"
+        ]
+      },
+      "query_template": "Horatio Alger scholarship {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "Fisher House Scholarships for Military Children",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "fisherhouse.org",
+        "militaryscholar.org"
+      ],
+      "homepage": "https://www.fisherhouse.org/programs/scholarship-programs/",
+      "purpose": "scholarships for children of service members",
+      "trigger": {
+        "military_keywords": [
+          "military",
+          "army",
+          "navy",
+          "air force",
+          "space force",
+          "marine",
+          "marines",
+          "coast guard",
+          "national guard",
+          "reserve",
+          "reserves",
+          "veteran",
+          "active duty",
+          "service member"
+        ]
+      },
+      "query_template": "Fisher House Scholarships for Military Children {entry_year} application"
+    },
+    {
+      "name": "Folds of Honor Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "foldsofhonor.org"
+      ],
+      "homepage": "https://foldsofhonor.org/",
+      "purpose": "scholarships for families of fallen or disabled service members and first responders",
+      "trigger": {
+        "military_keywords": [
+          "disabled",
+          "killed",
+          "fallen",
+          "gold star",
+          "purple heart",
+          "wounded",
+          "first responder"
+        ]
+      },
+      "query_template": "Folds of Honor scholarship {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "Marine Corps Scholarship Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "mcsf.org"
+      ],
+      "homepage": "https://www.mcsf.org/",
+      "purpose": "scholarships for Marine and Navy Corpsman families",
+      "trigger": {
+        "military_keywords": [
+          "marine",
+          "marines",
+          "usmc",
+          "navy corpsman",
+          "corpsman"
+        ]
+      },
+      "query_template": "Marine Corps Scholarship Foundation scholarship {entry_year} application"
+    },
+    {
+      "name": "Army Emergency Relief Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "armyemergencyrelief.org"
+      ],
+      "homepage": "https://www.armyemergencyrelief.org/",
+      "purpose": "scholarships for Army families",
+      "trigger": {
+        "military_keywords": [
+          "army"
+        ]
+      },
+      "query_template": "Army Emergency Relief scholarship {entry_year} application"
+    },
+    {
+      "name": "Air and Space Forces Aid Society",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "afas.org"
+      ],
+      "homepage": "https://afas.org/",
+      "purpose": "education grants for Air Force and Space Force families",
+      "trigger": {
+        "military_keywords": [
+          "air force",
+          "space force"
+        ]
+      },
+      "query_template": "Air and Space Forces Aid Society Arnold education grant {entry_year}"
+    },
+    {
+      "name": "Army ROTC Scholarships",
+      "role": "official_program",
+      "tier": 4,
+      "official_domains": [
+        "goarmy.com",
+        "army.mil"
+      ],
+      "homepage": "https://www.goarmy.com/careers-and-jobs/find-your-path/army-officers/rotc",
+      "purpose": "ROTC scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "jrotc",
+          "rotc",
+          "junior rotc"
+        ],
+        "military_keywords": [
+          "rotc"
+        ]
+      },
+      "query_template": "Army ROTC scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Navy ROTC Scholarships",
+      "role": "official_program",
+      "tier": 4,
+      "official_domains": [
+        "netc.navy.mil",
+        "navy.mil"
+      ],
+      "homepage": "https://www.netc.navy.mil/NSTC/NROTC/",
+      "purpose": "ROTC scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "jrotc",
+          "rotc",
+          "nrotc",
+          "sea cadets",
+          "naval sea cadet"
+        ],
+        "military_keywords": [
+          "rotc"
+        ]
+      },
+      "query_template": "Navy ROTC scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Air Force ROTC Scholarships",
+      "role": "official_program",
+      "tier": 4,
+      "official_domains": [
+        "afrotc.com"
+      ],
+      "homepage": "https://www.afrotc.com/",
+      "purpose": "ROTC scholarships",
+      "trigger": {
+        "affiliation_keywords": [
+          "jrotc",
+          "rotc",
+          "afjrotc",
+          "civil air patrol"
+        ],
+        "military_keywords": [
+          "rotc"
+        ]
+      },
+      "query_template": "Air Force ROTC scholarship {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "The Gates Scholarship",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "thegatesscholarship.org"
+      ],
+      "homepage": "https://www.thegatesscholarship.org/",
+      "purpose": "need-based scholarship for outstanding minority seniors",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ],
+        "true_fields": [
+          "student.financial_need"
+        ],
+        "identity_keywords": [
+          "black",
+          "african american",
+          "hispanic",
+          "latino",
+          "latina",
+          "latinx",
+          "latine",
+          "american indian",
+          "native american",
+          "alaska native",
+          "indigenous",
+          "tribal",
+          "tribe",
+          "first nations",
+          "asian",
+          "asian american",
+          "pacific islander",
+          "native hawaiian",
+          "filipino",
+          "chinese",
+          "korean",
+          "vietnamese",
+          "japanese",
+          "south asian",
+          "indian american",
+          "hmong",
+          "cambodian",
+          "laotian",
+          "thai",
+          "pakistani",
+          "bangladeshi",
+          "samoan",
+          "tongan",
+          "chamorro"
+        ]
+      },
+      "query_template": "The Gates Scholarship {graduation_year} application"
+    },
+    {
+      "name": "Ron Brown Scholar Program",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "ronbrown.org"
+      ],
+      "homepage": "https://ronbrown.org/",
+      "purpose": "scholarship for Black high school seniors",
+      "trigger": {
+        "search_modes": [
+          "high_school"
+        ],
+        "identity_keywords": [
+          "black",
+          "african american"
+        ]
+      },
+      "query_template": "Ron Brown Scholar Program {graduation_year} application"
+    },
+    {
+      "name": "UNCF Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "uncf.org"
+      ],
+      "homepage": "https://uncf.org/",
+      "purpose": "UNCF scholarships",
+      "trigger": {
+        "identity_keywords": [
+          "black",
+          "african american"
+        ]
+      },
+      "query_template": "UNCF scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Thurgood Marshall College Fund",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "tmcf.org"
+      ],
+      "homepage": "https://tmcf.org/",
+      "purpose": "scholarships for students at public HBCUs",
+      "trigger": {
+        "identity_keywords": [
+          "black",
+          "african american",
+          "hbcu"
+        ]
+      },
+      "query_template": "Thurgood Marshall College Fund scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "Hispanic Scholarship Fund",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "hsf.net"
+      ],
+      "homepage": "https://www.hsf.net/",
+      "purpose": "scholarships for Hispanic and Latino students",
+      "trigger": {
+        "identity_keywords": [
+          "hispanic",
+          "latino",
+          "latina",
+          "latinx",
+          "latine"
+        ]
+      },
+      "query_template": "Hispanic Scholarship Fund scholarship {entry_year} application"
+    },
+    {
+      "name": "APIA Scholars",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "apiascholars.org"
+      ],
+      "homepage": "https://apiascholars.org/",
+      "purpose": "scholarships for Asian and Pacific Islander American students",
+      "trigger": {
+        "identity_keywords": [
+          "asian",
+          "asian american",
+          "pacific islander",
+          "native hawaiian",
+          "filipino",
+          "chinese",
+          "korean",
+          "vietnamese",
+          "japanese",
+          "south asian",
+          "indian american",
+          "hmong",
+          "cambodian",
+          "laotian",
+          "thai",
+          "pakistani",
+          "bangladeshi",
+          "samoan",
+          "tongan",
+          "chamorro"
+        ]
+      },
+      "query_template": "APIA Scholars scholarship {entry_year} application"
+    },
+    {
+      "name": "American Indian College Fund",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "collegefund.org"
+      ],
+      "homepage": "https://collegefund.org/",
+      "purpose": "scholarships for American Indian and Alaska Native students",
+      "trigger": {
+        "identity_keywords": [
+          "american indian",
+          "native american",
+          "alaska native",
+          "indigenous",
+          "tribal",
+          "tribe",
+          "first nations"
+        ]
+      },
+      "query_template": "American Indian College Fund scholarships {entry_year} application"
+    },
+    {
+      "name": "Point Foundation",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "pointfoundation.org"
+      ],
+      "homepage": "https://pointfoundation.org/",
+      "purpose": "scholarships for LGBTQ+ students",
+      "trigger": {
+        "true_fields": [
+          "student.identity.lgbtq"
+        ]
+      },
+      "query_template": "Point Foundation scholarship {applicant_stage} {entry_year} application"
+    },
+    {
+      "name": "Society of Women Engineers Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "swe.org"
+      ],
+      "homepage": "https://swe.org/",
+      "purpose": "scholarships for women in engineering and computing",
+      "trigger": {
+        "match": "all",
+        "major_keywords": [
+          "engineering",
+          "computer science",
+          "computing"
+        ],
+        "identity_keywords": [
+          "woman",
+          "women",
+          "female",
+          "girl"
+        ]
+      },
+      "query_template": "Society of Women Engineers scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "NSBE Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "nsbe.org"
+      ],
+      "homepage": "https://nsbe.org/",
+      "purpose": "scholarships for Black engineering and technology students",
+      "trigger": {
+        "match": "all",
+        "major_keywords": [
+          "engineering",
+          "computer science",
+          "technology"
+        ],
+        "identity_keywords": [
+          "black",
+          "african american"
+        ]
+      },
+      "query_template": "National Society of Black Engineers scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "SHPE Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "shpe.org"
+      ],
+      "homepage": "https://shpe.org/",
+      "purpose": "scholarships for Hispanic STEM students",
+      "trigger": {
+        "match": "all",
+        "major_keywords": [
+          "engineering",
+          "computer science",
+          "computing",
+          "science",
+          "mathematics",
+          "technology",
+          "physics",
+          "chemistry",
+          "biology"
+        ],
+        "identity_keywords": [
+          "hispanic",
+          "latino",
+          "latina",
+          "latinx",
+          "latine"
+        ]
+      },
+      "query_template": "SHPE scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "AISES Scholarships",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aises.org"
+      ],
+      "homepage": "https://aises.org/",
+      "purpose": "scholarships for Indigenous STEM students",
+      "trigger": {
+        "match": "all",
+        "major_keywords": [
+          "engineering",
+          "computer science",
+          "computing",
+          "science",
+          "mathematics",
+          "technology",
+          "physics",
+          "chemistry",
+          "biology"
+        ],
+        "identity_keywords": [
+          "american indian",
+          "native american",
+          "alaska native",
+          "indigenous",
+          "tribal",
+          "tribe",
+          "first nations",
+          "native hawaiian",
+          "pacific islander"
+        ]
+      },
+      "query_template": "AISES scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "NCWIT Aspirations in Computing",
+      "role": "official_sponsor",
+      "tier": 4,
+      "official_domains": [
+        "aspirations.org"
+      ],
+      "homepage": "https://www.aspirations.org/",
+      "purpose": "computing awards and scholarships for women and nonbinary students",
+      "trigger": {
+        "match": "all",
+        "search_modes": [
+          "high_school"
+        ],
+        "major_keywords": [
+          "computer",
+          "computing",
+          "information technology",
+          "software",
+          "cybersecurity",
+          "data science"
+        ],
+        "identity_keywords": [
+          "woman",
+          "women",
+          "female",
+          "girl",
+          "nonbinary",
+          "non-binary",
+          "genderqueer"
+        ]
+      },
+      "query_template": "NCWIT Aspirations in Computing award {entry_year}"
+    },
+    {
+      "name": "Scholarship America",
+      "role": "authorized_administrator_and_discovery",
+      "tier": 5,
+      "official_domains": [
+        "scholarshipamerica.org"
+      ],
+      "homepage": "https://scholarshipamerica.org/",
+      "purpose": "authorized national scholarship programs",
+      "trigger": {
+        "always": true
+      },
+      "query_template": "Scholarship America open scholarships {applicant_stage} {entry_year}"
+    },
+    {
+      "name": "CareerOneStop Scholarship Finder",
+      "role": "government_discovery_database",
+      "tier": 5,
+      "official_domains": [
+        "careeronestop.org"
+      ],
+      "homepage": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
+      "purpose": "government scholarship discovery",
+      "trigger": {
+        "always": true
+      },
+      "query_template": "CareerOneStop scholarships {major} {entry_year}"
+    },
+    {
+      "name": "BigFuture Scholarship Search",
+      "role": "discovery_database",
+      "tier": 5,
+      "official_domains": [
+        "bigfuture.collegeboard.org"
+      ],
+      "homepage": "https://bigfuture.collegeboard.org/scholarships",
+      "purpose": "supplemental national scholarship discovery",
+      "trigger": {
+        "always": true
+      },
+      "query_template": "BigFuture scholarship {major} {applicant_stage} {entry_year}"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Dropdown test form</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 24px; }
+  .q { margin: 14px 0; }
+  label, .gf-title { display: block; font-weight: 600; margin-bottom: 4px; }
+  button.trigger, .rs-control, .select2, .chosen-container, .ts-control { display: inline-block; min-width: 240px; min-height: 26px; border: 1px solid #888; border-radius: 4px; padding: 4px 8px; background: #fff; text-align: left; }
+  [role=listbox].pop { position: absolute; background: #fff; border: 1px solid #555; list-style: none; margin: 0; padding: 2px; z-index: 5; min-width: 240px; }
+  [role=option] { padding: 3px 8px; cursor: pointer; }
+  #gf { display: inline-block; border: 1px solid #888; min-width: 200px; position: relative; padding: 2px; }
+  #gf .gf-opt { display: none; }
+  #gf .gf-opt[aria-selected=true] { display: block; }
+  #gf[aria-expanded=true] .gf-opt { display: block; }
+  .s2-hidden { position: absolute !important; width: 1px !important; height: 1px !important; clip: rect(0 0 0 0); overflow: hidden; border: 0; padding: 0; margin: -1px; }
+  .chosen-drop { display: none; }
+  .rs-single[hidden], .rs-placeholder[hidden] { display: none; }
+  .rs-value { display: flex; gap: 4px; align-items: center; }
+  #ctz-input { width: 2px; border: 0; outline: 0; padding: 0; }
+</style></head>
+<body>
+<h1>Dropdowns</h1>
+<form id="f" action="submitted.html" method="get">
+  <h2>About you</h2>
+  <div class="q"><span id="stl" class="lab"><b>State of residence</b></span><br>
+    <button type="button" class="trigger" id="stbtn" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="stl stbtn"><span id="stval">Select a state</span></button>
+    <input type="hidden" name="state" id="sthidden"></div>
+
+  <div class="q"><label for="ctz-input" id="ctzl">Citizenship status</label>
+    <div class="rs-control" id="ctz"><div class="rs-value"><div class="rs-placeholder">Select...</div><div class="rs-single" hidden></div>
+      <input id="ctz-input" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off"></div></div></div>
+
+  <div class="q"><label for="gnd">Gender</label>
+    <select id="gnd" name="gender" style="display:none"><option value="">Select</option><option>Female</option><option>Male</option></select>
+    <div class="ts-wrapper"><div class="ts-control"><span>Select gender</span></div></div></div>
+
+  <div class="q"><label for="gr">Current grade</label>
+    <select id="gr" name="grade" style="display:none"><option value=""></option><option>9th</option><option>10th</option><option>11th</option><option>12th</option></select>
+    <div class="chosen-container" id="gr_chosen"><a class="chosen-single"><span id="grshow">Select grade</span></a>
+      <div class="chosen-drop"><ul class="chosen-results"><li>9th</li><li>10th</li><li>11th</li><li>12th</li></ul></div></div></div>
+
+  <div class="q"><span id="prl"><b>Pronouns</b></span><br>
+    <button class="trigger" id="prbtn" aria-haspopup="listbox" aria-labelledby="prl">Choose</button></div>
+
+  <h2>Financial aid</h2>
+  <div class="q"><div class="gf-title" id="gfq">Do you qualify for financial aid?</div>
+    <div role="listbox" aria-labelledby="gfq" aria-expanded="false" id="gf" tabindex="0">
+      <div role="option" class="gf-opt" data-value="" aria-selected="true"><span>Choose</span></div>
+      <div role="option" class="gf-opt" data-value="Yes" aria-selected="false"><span>Yes</span></div>
+      <div role="option" class="gf-opt" data-value="No" aria-selected="false"><span>No</span></div>
+    </div></div>
+
+  <div class="q"><label for="inc">Total family income</label>
+    <select id="inc" name="income" class="s2-hidden"><option value="">Select</option><option>Less than $30,000</option><option>$30,000 - $49,999</option>
+      <option>$50,000 - $74,999</option><option>$75,000 or more</option></select>
+    <span class="select2 select2-container"><span class="select2-selection" role="combobox" aria-expanded="false"><span class="select2-selection__rendered" id="incshow">Select</span></span></span></div>
+
+  <div class="q"><label for="sai">Student Aid Index (SAI)</label><input id="sai" name="sai"></div>
+
+  <h2>Coursework</h2>
+  <div class="q"><label for="c1n">Course 1 name</label><input id="c1n" name="c1n"></div>
+  <div class="q"><label for="c1l">Course 1 level</label><select id="c1l" name="c1l"><option value="">Select</option><option>Regular</option><option>Honors</option><option>AP</option><option>Dual Enrollment</option></select></div>
+  <div class="q"><label for="apn">Number of AP courses taken</label><input id="apn" name="apn" type="number"></div>
+
+  <button type="submit" id="go">Submit</button>
+</form>
+<script>
+  window.__submits = 0;
+  const form = document.getElementById("f");
+  form.addEventListener("submit", () => { window.__submits++; });
+
+  // 1. A listbox button (Headless UI style). Choosing a state also tries to submit the form: a trap.
+  const stbtn = document.getElementById("stbtn");
+  let stlist = null;
+  const closeSt = () => { if (stlist) { stlist.remove(); stlist = null; } stbtn.setAttribute("aria-expanded", "false"); stbtn.removeAttribute("aria-controls"); };
+  stbtn.addEventListener("click", () => {
+    if (stlist) return closeSt();
+    stlist = document.createElement("ul");
+    stlist.setAttribute("role", "listbox"); stlist.id = "stlist"; stlist.className = "pop";
+    for (const s of ["Kentucky", "Kansas", "Washington", "Arkansas"]) {
+      const li = document.createElement("li"); li.setAttribute("role", "option"); li.textContent = s;
+      li.addEventListener("click", () => {
+        document.getElementById("stval").textContent = s; document.getElementById("sthidden").value = s; closeSt();
+        form.requestSubmit(); // trap
+      });
+      stlist.append(li);
+    }
+    const r = stbtn.getBoundingClientRect();
+    Object.assign(stlist.style, { left: `${r.left + scrollX}px`, top: `${r.bottom + scrollY}px` });
+    document.body.append(stlist);
+    stbtn.setAttribute("aria-expanded", "true"); stbtn.setAttribute("aria-controls", "stlist");
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeSt(); closeCtz(); closePr(); } });
+
+  // 2. A type-to-search box (React-Select style): opens on mousedown or typing, filters as you type.
+  const ctz = document.getElementById("ctz"), ctzIn = document.getElementById("ctz-input");
+  const CTZ = ["U.S. Citizen", "Permanent Resident", "DACA recipient", "International student"];
+  let ctzList = null;
+  const closeCtz = () => { if (ctzList) { ctzList.remove(); ctzList = null; } ctzIn.setAttribute("aria-expanded", "false"); };
+  const openCtz = () => {
+    closeCtz();
+    const q = ctzIn.value.toLowerCase();
+    ctzList = document.createElement("div"); ctzList.setAttribute("role", "listbox"); ctzList.id = "ctz-list"; ctzList.className = "pop";
+    for (const c of CTZ.filter((c) => c.toLowerCase().includes(q))) {
+      const o = document.createElement("div"); o.setAttribute("role", "option"); o.textContent = c;
+      o.addEventListener("mousedown", (e) => { e.preventDefault(); ctz.querySelector(".rs-single").textContent = c; ctz.querySelector(".rs-single").hidden = false; ctz.querySelector(".rs-placeholder").hidden = true; ctzIn.value = ""; closeCtz(); });
+      ctzList.append(o);
+    }
+    const r = ctz.getBoundingClientRect();
+    Object.assign(ctzList.style, { left: `${r.left + scrollX}px`, top: `${r.bottom + scrollY}px` });
+    document.body.append(ctzList);
+    ctzIn.setAttribute("aria-expanded", "true"); ctzIn.setAttribute("aria-controls", "ctz-list");
+  };
+  ctz.addEventListener("mousedown", (e) => { if (e.target.getAttribute("role") !== "option") openCtz(); });
+  ctzIn.addEventListener("input", openCtz);
+
+  // 3. Google Forms style: the options live inside the listbox and show when it opens.
+  const gf = document.getElementById("gf");
+  gf.addEventListener("click", () => gf.setAttribute("aria-expanded", gf.getAttribute("aria-expanded") === "true" ? "false" : "true"));
+  for (const o of gf.querySelectorAll("[role=option]")) o.addEventListener("click", (e) => {
+    if (gf.getAttribute("aria-expanded") !== "true") return;
+    e.stopPropagation();
+    gf.querySelectorAll("[role=option]").forEach((x) => x.setAttribute("aria-selected", String(x === o)));
+    gf.setAttribute("aria-expanded", "false");
+  });
+
+  // 4. Select2 style: a hidden real <select>; the look-alike follows its change event.
+  const inc = document.getElementById("inc");
+  inc.addEventListener("change", () => { document.getElementById("incshow").textContent = inc.options[inc.selectedIndex].text; });
+  // 5. Chosen style: the look-alike only updates on "chosen:updated".
+  const gr = document.getElementById("gr");
+  gr.addEventListener("chosen:updated", () => { document.getElementById("grshow").textContent = gr.options[gr.selectedIndex].text || "Select grade"; });
+  // 6. Tom Select style: the look-alike never follows the hidden select (so filling it must be undone).
+  // 7. A dropdown button that is really the form's submit button (no type): clicking it would submit.
+  const prbtn = document.getElementById("prbtn");
+  let prlist = null;
+  const closePr = () => { if (prlist) { prlist.remove(); prlist = null; } };
+  prbtn.addEventListener("click", (e) => {
+    prlist = document.createElement("ul"); prlist.setAttribute("role", "listbox"); prlist.className = "pop";
+    for (const p of ["she/her", "he/him", "they/them"]) { const li = document.createElement("li"); li.setAttribute("role", "option"); li.textContent = p; prlist.append(li); }
+    document.body.append(prlist);
+  });
+</script>
+</body></html>

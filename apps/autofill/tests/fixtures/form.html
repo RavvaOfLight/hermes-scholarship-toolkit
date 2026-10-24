@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Test Scholarship Application</title>
+<style>body{font-family:sans-serif;max-width:640px;margin:20px auto}label{display:block;margin-top:10px}input,select,textarea{width:100%;padding:6px}</style></head>
+<body>
+<h1>Test Scholarship Application</h1>
+<form id="app" action="submitted.html" method="get">
+  <h2>Student Information</h2>
+  <label for="fn">First Name *</label><input id="fn" name="first_name" required>
+  <label for="mn">Middle Name</label><input id="mn" name="middle" value="Q">
+  <label for="ln">Last Name *</label><input id="ln" name="last_name">
+  <label for="em">Email Address</label><input id="em" type="email" name="email">
+  <label for="ph">Cell Phone</label><input id="ph" type="tel" placeholder="(555) 555-5555">
+  <label for="dob">Date of Birth</label><input id="dob" placeholder="MM/DD/YYYY">
+  <label for="st">State</label><select id="st"><option value="">-- Select --</option><option>Kentucky</option><option>Kansas</option><option>Arkansas</option></select>
+  <label for="gd">Gender</label><select id="gd"><option value="">Select</option><option>Male</option><option>Female</option></select>
+  <label for="ssn">Social Security Number</label><input id="ssn">
+  <div id="shadowhost"></div>
+  <iframe id="fr" srcdoc="<label for='co'>County</label><input id='co'>" style="width:100%;height:70px;border:0"></iframe>
+  <h2>Parent/Guardian 1</h2>
+  <label for="p1f">First Name</label><input id="p1f">
+  <label for="p1e">Email</label><input id="p1e" type="email">
+  <h2>School Counselor</h2>
+  <label for="ce">Email</label><input id="ce" type="email">
+  <h2>Essay</h2>
+  <label for="es">Why do you deserve this scholarship?</label><textarea id="es"></textarea>
+  <label><input type="checkbox" id="cert"> I certify that everything above is true</label>
+  <button type="submit" id="go">Submit Application</button>
+</form>
+<script>
+  window.__submits = 0; window.__reactLast = "";
+  const form = document.getElementById("app");
+  form.addEventListener("submit", () => { window.__submits++; });
+  // traps: an old-style auto-submit dropdown, a script that submits on change, a blur that clicks Submit
+  document.getElementById("gd").addEventListener("change", () => form.submit());
+  document.getElementById("em").addEventListener("change", () => form.requestSubmit());
+  document.getElementById("ph").addEventListener("blur", () => document.getElementById("go").click());
+  // React-style controlled box: keeps only values that arrive through a real input event
+  const ln = document.getElementById("ln");
+  const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set;
+  let tracked = "";
+  Object.defineProperty(ln, "value", { get() { return Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").get.call(this); }, set(v) { tracked = v; setter.call(this, v); }, configurable: true });
+  ln.addEventListener("input", () => { const now = ln.value; if (now !== tracked) { tracked = now; window.__reactLast = now; } });
+  ln.addEventListener("change", () => setTimeout(() => { ln.value = window.__reactLast; }, 50));
+  // a box inside an open shadow root
+  const sr = document.getElementById("shadowhost").attachShadow({ mode: "open" });
+  sr.innerHTML = '<label for="z">ZIP Code</label><input id="z">';
+</script>
+</body></html>

@@ -1,0 +1,7 @@
+GRADE 9  2022-2023                      GRADE 10  2023-2024
+English 9            A    1.0           English 10           A-   1.0
+Algebra I            B    1.0           Geometry H           B+   1.0
+Biology              A    1.0           Chemistry            B    1.0
+Health/PE            A    1.0           AP Human Geography   A    1.0
+
+Cumulative GPA: 3.71

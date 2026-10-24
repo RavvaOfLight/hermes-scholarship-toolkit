@@ -1,0 +1,235 @@
+{
+  "version": 2,
+  "sections": [
+    {
+      "id": "student",
+      "title": "You",
+      "hint": "Use your legal name exactly as it appears on school records.",
+      "items": [
+        {"key": "student.first_name", "label": "First name", "type": "name"},
+        {"key": "student.middle_name", "label": "Middle name", "type": "name"},
+        {"key": "student.last_name", "label": "Last name", "type": "name"},
+        {"key": "student.suffix", "label": "Suffix", "type": "choice", "options": ["Jr.", "Sr.", "II", "III", "IV"]},
+        {"key": "student.preferred_name", "label": "Preferred name", "type": "name"},
+        {"key": "student.date_of_birth", "label": "Date of birth", "type": "date"},
+        {"key": "student.gender", "label": "Gender", "type": "choice", "options": ["Female", "Male", "Non-binary", "Prefer not to say"]},
+        {"key": "student.pronouns", "label": "Pronouns", "type": "text", "placeholder": "e.g. she/her"},
+        {"key": "student.citizenship", "label": "Citizenship", "type": "choice", "options": ["U.S. citizen", "U.S. permanent resident", "Other"]},
+        {"key": "student.grade_level", "label": "Current grade", "type": "choice", "options": ["9th grade", "10th grade", "11th grade", "12th grade", "High school graduate", "College student"]}
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact & address",
+      "items": [
+        {"key": "student.email", "label": "Your email", "type": "email"},
+        {"key": "student.phone", "label": "Your cell phone", "type": "phone"},
+        {"key": "student.address_line1", "label": "Street address", "type": "text"},
+        {"key": "student.address_line2", "label": "Apt / unit", "type": "text"},
+        {"key": "student.city", "label": "City", "type": "text"},
+        {"key": "student.state", "label": "State", "type": "state"},
+        {"key": "student.zip", "label": "ZIP code", "type": "zip"},
+        {"key": "student.county", "label": "County", "type": "text", "placeholder": "e.g. Lakeside"},
+        {"key": "student.country", "label": "Country", "type": "text", "placeholder": "e.g. United States"}
+      ]
+    },
+    {
+      "id": "parent1",
+      "title": "Parent / guardian 1",
+      "items": [
+        {"key": "parent1.relationship", "label": "Relationship to you", "type": "choice", "options": ["Mother", "Father", "Stepmother", "Stepfather", "Legal guardian", "Grandmother", "Grandfather", "Other"]},
+        {"key": "parent1.first_name", "label": "First name", "type": "name"},
+        {"key": "parent1.last_name", "label": "Last name", "type": "name"},
+        {"key": "parent1.email", "label": "Email", "type": "email"},
+        {"key": "parent1.phone", "label": "Phone", "type": "phone"},
+        {"key": "parent1.occupation", "label": "Occupation", "type": "text"},
+        {"key": "parent1.employer", "label": "Employer", "type": "text"},
+        {"key": "parent1.education", "label": "Highest education", "type": "choice", "options": ["Some high school", "High school diploma or GED", "Some college", "Associate degree", "Bachelor's degree", "Master's degree", "Doctorate or professional degree", "Unknown"]}
+      ]
+    },
+    {
+      "id": "parent2",
+      "title": "Parent / guardian 2",
+      "items": [
+        {"key": "parent2.relationship", "label": "Relationship to you", "type": "choice", "options": ["Mother", "Father", "Stepmother", "Stepfather", "Legal guardian", "Grandmother", "Grandfather", "Other"]},
+        {"key": "parent2.first_name", "label": "First name", "type": "name"},
+        {"key": "parent2.last_name", "label": "Last name", "type": "name"},
+        {"key": "parent2.email", "label": "Email", "type": "email"},
+        {"key": "parent2.phone", "label": "Phone", "type": "phone"},
+        {"key": "parent2.occupation", "label": "Occupation", "type": "text"},
+        {"key": "parent2.employer", "label": "Employer", "type": "text"},
+        {"key": "parent2.education", "label": "Highest education", "type": "choice", "options": ["Some high school", "High school diploma or GED", "Some college", "Associate degree", "Bachelor's degree", "Master's degree", "Doctorate or professional degree", "Unknown"]}
+      ]
+    },
+    {
+      "id": "school",
+      "title": "High school & counselor",
+      "items": [
+        {"key": "school.name", "label": "High school name", "type": "text"},
+        {"key": "school.ceeb", "label": "CEEB / school code", "type": "ceeb", "placeholder": "6 digits"},
+        {"key": "school.address_line1", "label": "School street address", "type": "text"},
+        {"key": "school.city", "label": "School city", "type": "text"},
+        {"key": "school.state", "label": "School state", "type": "state"},
+        {"key": "school.zip", "label": "School ZIP code", "type": "zip"},
+        {"key": "school.phone", "label": "School phone", "type": "phone"},
+        {"key": "school.graduation", "label": "Graduation (month and year)", "type": "month"},
+        {"key": "school.counselor_first_name", "label": "Counselor first name", "type": "name"},
+        {"key": "school.counselor_last_name", "label": "Counselor last name", "type": "name"},
+        {"key": "school.counselor_email", "label": "Counselor email", "type": "email"},
+        {"key": "school.counselor_phone", "label": "Counselor phone", "type": "phone"}
+      ]
+    },
+    {
+      "id": "academics",
+      "title": "Grades & test scores",
+      "items": [
+        {"key": "academics.gpa_unweighted", "label": "Unweighted GPA", "type": "number", "min": 0, "max": 5, "decimals": 4},
+        {"key": "academics.gpa_unweighted_scale", "label": "Unweighted GPA scale", "type": "number", "min": 1, "max": 12, "decimals": 2, "placeholder": "e.g. 4.0"},
+        {"key": "academics.gpa_weighted", "label": "Weighted GPA", "type": "number", "min": 0, "max": 12, "decimals": 4},
+        {"key": "academics.gpa_weighted_scale", "label": "Weighted GPA scale", "type": "number", "min": 1, "max": 12, "decimals": 2, "placeholder": "e.g. 5.0"},
+        {"key": "academics.class_rank", "label": "Class rank", "type": "integer", "min": 1, "max": 5000},
+        {"key": "academics.class_size", "label": "Class size", "type": "integer", "min": 1, "max": 5000},
+        {"key": "academics.act_composite", "label": "ACT composite", "type": "integer", "min": 1, "max": 36},
+        {"key": "academics.act_english", "label": "ACT English", "type": "integer", "min": 1, "max": 36},
+        {"key": "academics.act_math", "label": "ACT Math", "type": "integer", "min": 1, "max": 36},
+        {"key": "academics.act_reading", "label": "ACT Reading", "type": "integer", "min": 1, "max": 36},
+        {"key": "academics.act_science", "label": "ACT Science", "type": "integer", "min": 1, "max": 36},
+        {"key": "academics.act_date", "label": "ACT test date", "type": "date"},
+        {"key": "academics.sat_total", "label": "SAT total", "type": "integer", "min": 400, "max": 1600},
+        {"key": "academics.sat_erw", "label": "SAT Reading and Writing", "type": "integer", "min": 200, "max": 800},
+        {"key": "academics.sat_math", "label": "SAT Math", "type": "integer", "min": 200, "max": 800},
+        {"key": "academics.sat_date", "label": "SAT test date", "type": "date"}
+      ]
+    },
+    {
+      "id": "college",
+      "title": "College plans",
+      "items": [
+        {"key": "college.name", "label": "College you plan to attend", "type": "text"},
+        {"key": "college.intended_major", "label": "Intended major", "type": "text"},
+        {"key": "college.career_goal", "label": "Career goal", "type": "text"},
+        {"key": "college.start_term", "label": "Start term", "type": "text", "placeholder": "e.g. Fall 2027"},
+        {"key": "college.degree", "label": "Degree you are pursuing", "type": "text", "placeholder": "e.g. Bachelor's degree"},
+        {"key": "college.enrollment_status", "label": "Full-time or part-time", "type": "choice", "options": ["Full-time", "Part-time"]}
+      ]
+    },
+    {
+      "id": "household",
+      "title": "Household",
+      "items": [
+        {"key": "household.size", "label": "People in your household", "type": "integer", "min": 1, "max": 30},
+        {"key": "household.in_college", "label": "People in college next year (incl. you)", "type": "integer", "min": 0, "max": 20},
+        {"key": "household.parents_marital_status", "label": "Parents' marital status", "type": "choice", "options": ["Married", "Remarried", "Divorced", "Separated", "Widowed", "Never married"]},
+        {"key": "household.first_generation", "label": "First-generation college student", "type": "yesno"}
+      ]
+    },
+    {
+      "id": "financial",
+      "title": "Financial aid",
+      "hint": "Copy numbers from your FAFSA Submission Summary or tax return. Never save an SSN, FSA ID or bank details here.",
+      "items": [
+        {"key": "financial.financial_need", "label": "You have financial need (qualify for need-based aid)", "type": "yesno"},
+        {"key": "financial.applying_for_aid", "label": "Applying for financial aid", "type": "yesno"},
+        {"key": "financial.fafsa_filed", "label": "FAFSA submitted", "type": "yesno"},
+        {"key": "financial.fafsa_date", "label": "Date you submitted the FAFSA", "type": "date"},
+        {"key": "financial.sai", "label": "Student Aid Index (SAI)", "type": "integer", "min": -1500, "max": 999999, "placeholder": "from your FAFSA Submission Summary; can be negative"},
+        {"key": "financial.pell_eligible", "label": "Eligible for a Pell Grant", "type": "yesno"},
+        {"key": "financial.css_profile", "label": "CSS Profile submitted", "type": "yesno"},
+        {"key": "financial.family_income", "label": "Total family income (yearly, dollars)", "type": "integer", "min": 0, "max": 100000000},
+        {"key": "financial.agi", "label": "Parents' adjusted gross income (AGI)", "type": "integer", "min": -100000000, "max": 100000000, "placeholder": "line 11 of the 1040"},
+        {"key": "financial.student_income", "label": "Your own yearly income (dollars)", "type": "integer", "min": 0, "max": 10000000},
+        {"key": "financial.unmet_need", "label": "Unmet need (cost left after aid, dollars)", "type": "integer", "min": 0, "max": 1000000},
+        {"key": "financial.free_lunch", "label": "Free or reduced-price lunch", "type": "yesno"}
+      ]
+    }
+  ],
+  "lists": [
+    {
+      "id": "courses", "title": "Classes", "noun": "Class", "max": 100,
+      "hint": "Paste your transcript to fill these in, then check each row. GPA points is what the class counts for in your GPA (for example 5.0 for an A in AP).",
+      "fields": [
+        {"id": "name", "label": "Class name", "type": "text"},
+        {"id": "level", "label": "Level", "type": "choice", "options": ["Regular", "Honors", "Advanced", "Pre-AP", "AP", "IB", "Dual enrollment", "College course", "Other"]},
+        {"id": "grade_level", "label": "Grade taken", "type": "choice", "options": ["8th grade", "9th grade", "10th grade", "11th grade", "12th grade"]},
+        {"id": "term", "label": "Term", "type": "text", "placeholder": "e.g. Full year, Semester 1, 2025-26"},
+        {"id": "grade", "label": "Final grade", "type": "text", "placeholder": "e.g. A-, 94, P"},
+        {"id": "credits", "label": "Credits", "type": "number", "min": 0, "max": 10, "decimals": 3},
+        {"id": "gpa_points", "label": "GPA points", "type": "number", "min": 0, "max": 12, "decimals": 3},
+        {"id": "status", "label": "Status", "type": "choice", "options": ["Completed", "In progress", "Planned"]}
+      ]
+    },
+    {
+      "id": "exams", "title": "AP and IB exam scores", "noun": "Exam", "max": 30,
+      "fields": [
+        {"id": "exam", "label": "Exam", "type": "text", "placeholder": "e.g. AP Biology"},
+        {"id": "score", "label": "Score", "type": "integer", "min": 1, "max": 7},
+        {"id": "date", "label": "Month taken", "type": "month"}
+      ]
+    },
+    {
+      "id": "activities", "title": "Activities", "noun": "Activity", "max": 15,
+      "fields": [
+        {"id": "name", "label": "Activity name", "type": "text"},
+        {"id": "role", "label": "Your role or position", "type": "text"},
+        {"id": "organization", "label": "Organization", "type": "text"},
+        {"id": "grades", "label": "Grades participated", "type": "text", "placeholder": "e.g. 10, 11, 12"},
+        {"id": "hours_per_week", "label": "Hours per week", "type": "number", "min": 0, "max": 168, "decimals": 1},
+        {"id": "weeks_per_year", "label": "Weeks per year", "type": "integer", "min": 0, "max": 52},
+        {"id": "description", "label": "Short description", "type": "longtext", "maxlength": 1000}
+      ]
+    },
+    {
+      "id": "awards", "title": "Honors & awards", "noun": "Award", "max": 12,
+      "fields": [
+        {"id": "name", "label": "Award name", "type": "text"},
+        {"id": "level", "label": "Level", "type": "choice", "options": ["School", "Local", "Regional", "State", "National", "International"]},
+        {"id": "grade", "label": "Grade received", "type": "text", "placeholder": "e.g. 11"}
+      ]
+    },
+    {
+      "id": "work", "title": "Jobs", "noun": "Job", "max": 8,
+      "fields": [
+        {"id": "employer", "label": "Employer", "type": "text"},
+        {"id": "title", "label": "Job title", "type": "text"},
+        {"id": "start", "label": "Start (month and year)", "type": "month"},
+        {"id": "end", "label": "End (month and year, blank if current)", "type": "month"},
+        {"id": "hours_per_week", "label": "Hours per week", "type": "number", "min": 0, "max": 168, "decimals": 1},
+        {"id": "description", "label": "Short description", "type": "longtext", "maxlength": 1000}
+      ]
+    },
+    {
+      "id": "recommenders", "title": "Recommenders", "noun": "Recommender", "max": 6,
+      "fields": [
+        {"id": "first_name", "label": "First name", "type": "name"},
+        {"id": "last_name", "label": "Last name", "type": "name"},
+        {"id": "title", "label": "Title or position", "type": "text", "placeholder": "e.g. AP Physics teacher"},
+        {"id": "relationship", "label": "How they know you", "type": "text"},
+        {"id": "email", "label": "Email", "type": "email"},
+        {"id": "phone", "label": "Phone", "type": "phone"}
+      ]
+    },
+    {
+      "id": "custom", "title": "Other saved answers", "noun": "Answer", "max": 40,
+      "hint": "Anything else forms ask for, like a student ID. Fill these by choosing them and clicking the box.",
+      "fields": [
+        {"id": "label", "label": "Question or box name", "type": "text"},
+        {"id": "value", "label": "Answer", "type": "text"},
+        {"id": "also", "label": "Other names for it (comma separated)", "type": "text"}
+      ]
+    }
+  ],
+  "states": [
+    ["AL", "Alabama"], ["AK", "Alaska"], ["AZ", "Arizona"], ["AR", "Arkansas"], ["CA", "California"],
+    ["CO", "Colorado"], ["CT", "Connecticut"], ["DE", "Delaware"], ["DC", "District of Columbia"], ["FL", "Florida"],
+    ["GA", "Georgia"], ["HI", "Hawaii"], ["ID", "Idaho"], ["IL", "Illinois"], ["IN", "Indiana"],
+    ["IA", "Iowa"], ["KS", "Kansas"], ["KY", "Kentucky"], ["LA", "Louisiana"], ["ME", "Maine"],
+    ["MD", "Maryland"], ["MA", "Massachusetts"], ["MI", "Michigan"], ["MN", "Minnesota"], ["MS", "Mississippi"],
+    ["MO", "Missouri"], ["MT", "Montana"], ["NE", "Nebraska"], ["NV", "Nevada"], ["NH", "New Hampshire"],
+    ["NJ", "New Jersey"], ["NM", "New Mexico"], ["NY", "New York"], ["NC", "North Carolina"], ["ND", "North Dakota"],
+    ["OH", "Ohio"], ["OK", "Oklahoma"], ["OR", "Oregon"], ["PA", "Pennsylvania"], ["RI", "Rhode Island"],
+    ["SC", "South Carolina"], ["SD", "South Dakota"], ["TN", "Tennessee"], ["TX", "Texas"], ["UT", "Utah"],
+    ["VT", "Vermont"], ["VA", "Virginia"], ["WA", "Washington"], ["WV", "West Virginia"], ["WI", "Wisconsin"],
+    ["WY", "Wyoming"], ["PR", "Puerto Rico"], ["GU", "Guam"], ["VI", "U.S. Virgin Islands"], ["AS", "American Samoa"],
+    ["MP", "Northern Mariana Islands"]
+  ]
+}

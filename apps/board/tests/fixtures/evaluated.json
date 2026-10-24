@@ -1,0 +1,53 @@
+{
+ "verified": [
+  {
+   "name": "Example Community Foundation Award",
+   "sponsor": "Example Community Foundation",
+   "deadline": {
+    "date": "2099-03-01",
+    "type": "fixed"
+   },
+   "amount": {
+    "display": "$2,500",
+    "maximum": 2500
+   },
+   "status": "open",
+   "match_reasons": [
+    "county residents"
+   ],
+   "application_tasks": [
+    "Write a 500-word essay"
+   ],
+   "official_url": "https://example.org/award",
+   "verified_at": "2026-10-20"
+  }
+ ],
+ "needs_confirmation": [
+  {
+   "name": "Example Engineering Society Scholarship",
+   "sponsor": "Example Society",
+   "deadline": {
+    "date": null,
+    "type": "unknown"
+   },
+   "amount": {
+    "display": "$1,000"
+   },
+   "status": "not_open_yet",
+   "eligibility_state": "needs_confirmation",
+   "uncertainties": [
+    "Fee wording not found."
+   ],
+   "official_url": "https://example.org/society"
+  }
+ ],
+ "unverified": [
+  {
+   "name": "Database Lead Award",
+   "official_url": "https://lead.example.com/x",
+   "validation_notes": [
+    "Only seen on a database."
+   ]
+  }
+ ]
+}

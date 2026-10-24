@@ -1,0 +1,227 @@
+{
+  "scholarships": [
+    {
+      "name": "Example Valley STEM Scholarship",
+      "sponsor": "Example Valley Community Foundation",
+      "source_kind": "official",
+      "source_verification": {
+        "method": "sponsor_domain",
+        "authority_url": "https://www.example.org/about",
+        "evidence": "The foundation's About page says it created and funds the STEM Scholarship.",
+        "trusted_source": null
+      },
+      "cycle": "2027-2028 academic year",
+      "applicant_entry_year": 2027,
+      "status": "open",
+      "amount": {
+        "display": "Up to $3,000 per year, renewable for four years with a 2.5 college GPA",
+        "minimum": null,
+        "maximum": 3000
+      },
+      "deadline": {
+        "date": "2027-03-01",
+        "timezone": "America/New_York",
+        "type": "received_by"
+      },
+      "requirements": [
+        {
+          "field": "student.location.state",
+          "operator": "eq",
+          "value": "Ohio",
+          "hard": true,
+          "description": "Ohio resident",
+          "evidence": "Open to Ohio residents."
+        },
+        {
+          "field": "student.search_mode",
+          "operator": "in",
+          "value": [
+            "high_school"
+          ],
+          "hard": true,
+          "description": "Graduating high school senior",
+          "evidence": "For high school seniors entering college in fall 2027."
+        },
+        {
+          "field": "student.academics.unweighted_gpa",
+          "operator": "gte",
+          "value": 3.0,
+          "hard": true,
+          "description": "Unweighted GPA of at least 3.0",
+          "evidence": "Applicants need a 3.0 GPA or must be first-generation college students."
+        },
+        {
+          "field": "student.first_generation",
+          "operator": "truthy",
+          "value": true,
+          "hard": true,
+          "description": "First-generation college student",
+          "evidence": "Applicants need a 3.0 GPA or must be first-generation college students."
+        },
+        {
+          "field": "student.academics.intended_major",
+          "operator": "contains_any",
+          "value": [
+            "engineering",
+            "computer",
+            "science",
+            "mathematics",
+            "technology"
+          ],
+          "hard": true,
+          "description": "Plans to major in a STEM field",
+          "evidence": "Recipients must pursue a degree in science, technology, engineering, or mathematics."
+        },
+        {
+          "field": "student.affiliations.clubs",
+          "operator": "contains_any",
+          "value": [
+            "robotics",
+            "science olympiad"
+          ],
+          "hard": false,
+          "description": "Preference for robotics or Science Olympiad participants",
+          "evidence": "Preference is given to students active in robotics or Science Olympiad."
+        }
+      ],
+      "eligibility_logic": {
+        "all": [
+          {
+            "requirement": 0
+          },
+          {
+            "requirement": 1
+          },
+          {
+            "requirement": 4
+          },
+          {
+            "any": [
+              {
+                "requirement": 2
+              },
+              {
+                "requirement": 3
+              }
+            ]
+          }
+        ]
+      },
+      "application_tasks": [
+        "Online application",
+        "500-word essay about a STEM project",
+        "One teacher recommendation",
+        "Unofficial transcript"
+      ],
+      "official_url": "https://www.example.org/scholarships/stem",
+      "application_url": "https://www.example.org/scholarships/stem/apply",
+      "verified_at": "2026-10-20",
+      "evidence": {
+        "amount": "Awards of up to $3,000 per year, renewable for four years with a 2.5 college GPA.",
+        "deadline": "Applications must be received by March 1, 2027, 11:59 p.m. Eastern.",
+        "eligibility": "Ohio high school seniors entering college in fall 2027 who will study STEM and have a 3.0 GPA or are first-generation college students.",
+        "application": "Submit the online application, an essay, one teacher recommendation, and an unofficial transcript."
+      },
+      "uncertainties": [],
+      "notes": [
+        "No minimum GPA is published; the committee reviews essays and recommendations."
+      ],
+      "application_fee": false,
+      "is_loan": false,
+      "is_sweepstakes": false
+    },
+    {
+      "name": "Example Manufacturing Dependents Scholarship",
+      "sponsor": "Example Manufacturing Company",
+      "source_kind": "authorized_administrator",
+      "source_verification": {
+        "method": "authorized_by_sponsor",
+        "authority_url": "https://www.example.com/careers/benefits/scholarships",
+        "evidence": "The company's benefits page says its dependents scholarship is administered by Example Scholarship Services.",
+        "trusted_source": null
+      },
+      "cycle": "2027-28",
+      "applicant_entry_year": null,
+      "status": "not_open_yet",
+      "amount": {
+        "display": "$2,000",
+        "minimum": 2000,
+        "maximum": 2000
+      },
+      "deadline": {
+        "date": null,
+        "timezone": "",
+        "type": "not_announced"
+      },
+      "requirements": [
+        {
+          "field": "student.affiliations.employer",
+          "operator": "contains",
+          "value": "Example Manufacturing",
+          "hard": true,
+          "description": "Child of an Example Manufacturing employee",
+          "evidence": "Open to dependent children of full-time Example Manufacturing employees."
+        }
+      ],
+      "eligibility_logic": null,
+      "application_tasks": [
+        "Online application through the administrator",
+        "Parent employment verification"
+      ],
+      "official_url": "https://apply.example.net/example-manufacturing",
+      "application_url": "",
+      "verified_at": "2026-10-20",
+      "evidence": {
+        "amount": "Ten $2,000 awards.",
+        "deadline": "The 2027-28 application opens in January 2027; the deadline will be posted then.",
+        "eligibility": "Dependent children of full-time employees who will enroll full-time in fall 2027.",
+        "application": "Apply online through Example Scholarship Services; employment is verified with HR."
+      },
+      "uncertainties": [
+        "The 2027-28 deadline has not been announced."
+      ],
+      "application_fee": false,
+      "is_loan": false,
+      "is_sweepstakes": false
+    },
+    {
+      "name": "Example Robotics Award",
+      "sponsor": "Example Robotics League",
+      "source_kind": "discovery",
+      "source_verification": null,
+      "cycle": "Unknown",
+      "applicant_entry_year": null,
+      "status": "cycle_unknown",
+      "amount": {
+        "display": "$1,000",
+        "minimum": 1000,
+        "maximum": 1000
+      },
+      "deadline": {
+        "date": null,
+        "timezone": "",
+        "type": "not_announced"
+      },
+      "requirements": [],
+      "eligibility_logic": null,
+      "application_tasks": [
+        "Find the sponsor's official page before applying"
+      ],
+      "official_url": "https://www.scholarships.com/financial-aid/example-robotics-award",
+      "application_url": "",
+      "verified_at": "2026-10-20",
+      "evidence": {
+        "amount": "Database listing shows $1,000.",
+        "deadline": "Database listing shows no current deadline.",
+        "eligibility": "Database listing mentions robotics team members.",
+        "application": "No sponsor page was found."
+      },
+      "uncertainties": [
+        "No official sponsor page was found."
+      ],
+      "application_fee": null,
+      "is_loan": null,
+      "is_sweepstakes": null
+    }
+  ]
+}

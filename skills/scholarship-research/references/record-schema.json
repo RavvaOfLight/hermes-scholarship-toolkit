@@ -1,0 +1,461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scholarship research candidate file",
+  "type": "object",
+  "required": [
+    "scholarships"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "scholarships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scholarship"
+      }
+    }
+  },
+  "$defs": {
+    "scholarship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "sponsor",
+        "source_kind",
+        "source_verification",
+        "cycle",
+        "status",
+        "amount",
+        "deadline",
+        "requirements",
+        "eligibility_logic",
+        "application_tasks",
+        "official_url",
+        "application_url",
+        "verified_at",
+        "evidence",
+        "uncertainties",
+        "application_fee",
+        "is_loan",
+        "is_sweepstakes"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Scholarship name as the sponsor states it."
+        },
+        "sponsor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Organization that funds the award."
+        },
+        "source_kind": {
+          "enum": [
+            "official",
+            "authorized_administrator",
+            "discovery"
+          ],
+          "description": "official: sponsor's own page; authorized_administrator: a third party running it for the sponsor; discovery: a database or other unverified lead."
+        },
+        "source_verification": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/source_verification"
+            }
+          ],
+          "description": "Proof of source authority; null only for discovery records."
+        },
+        "cycle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Award cycle as stated, for example '2027-2028 academic year' or 'Class of 2027'. Must include the student's entry year unless status is cycle_unknown."
+        },
+        "applicant_entry_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 2000,
+          "maximum": 2100,
+          "description": "Optional explicit college-entry year the cycle serves."
+        },
+        "status": {
+          "enum": [
+            "open",
+            "not_open_yet",
+            "closed",
+            "cycle_unknown"
+          ],
+          "description": "open requires an application URL and a deadline date unless the deadline is rolling."
+        },
+        "amount": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "display",
+            "minimum",
+            "maximum"
+          ],
+          "properties": {
+            "display": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "description": "Exact award wording ('up to', ranges, 'varies', renewal terms). Keep it under 200 characters; longer text is cut at a clause boundary and the full text is kept in evidence.amount."
+            },
+            "minimum": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "maximum": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0
+            }
+          },
+          "description": "display keeps the page wording; minimum and maximum are numbers or null when not stated."
+        },
+        "deadline": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "date",
+            "timezone",
+            "type"
+          ],
+          "properties": {
+            "date": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "timezone": {
+              "type": "string",
+              "maxLength": 100
+            },
+            "type": {
+              "enum": [
+                "received_by",
+                "postmarked_by",
+                "rolling",
+                "not_announced"
+              ]
+            }
+          },
+          "description": "date is YYYY-MM-DD or null (allowed for rolling deadlines and for records that are not open); timezone is an IANA name or empty when unstated."
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/requirement"
+          },
+          "description": "Eligibility rules over profile fields; hard=true for rules that disqualify."
+        },
+        "eligibility_logic": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/eligibility_node"
+            }
+          ],
+          "description": "null for a simple AND of all hard requirements, or an all/any/not tree that references every hard requirement exactly once."
+        },
+        "application_tasks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "description": "Every step the applicant must complete, such as essays, letters, or transcripts."
+        },
+        "official_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://",
+          "description": "The official page that supports the record (https, percent-encoded)."
+        },
+        "application_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^(https://|$)",
+          "description": "Where to apply; empty string when not yet published."
+        },
+        "verified_at": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 80,
+          "description": "ISO date or timestamp of the check in this run."
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "amount",
+            "deadline",
+            "eligibility",
+            "application"
+          ],
+          "properties": {
+            "amount": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "deadline": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "eligibility": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            },
+            "application": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000
+            }
+          },
+          "description": "Short quotes or close paraphrases from the official page for each claim."
+        },
+        "uncertainties": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "description": "Anything that could not be confirmed; any entry forces needs_confirmation."
+        },
+        "notes": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "description": "Optional page-backed observations that do not affect eligibility, such as 'No GPA minimum is published; selection uses essays.' A note that hedges (confirm, unclear, may, might, appears, not stated) is moved to uncertainties by the evaluator. Page checks also add notes quoting the page."
+        },
+        "application_fee": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "true rejects the record; null (unknown) forces confirmation."
+        },
+        "is_loan": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "true rejects the record; null (unknown) forces confirmation."
+        },
+        "is_sweepstakes": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "true rejects the record; null (unknown) forces confirmation."
+        }
+      }
+    },
+    "source_verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "authority_url",
+        "evidence",
+        "trusted_source"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "trusted_registry",
+            "sponsor_domain",
+            "authorized_by_sponsor"
+          ],
+          "description": "trusted_registry, sponsor_domain, or authorized_by_sponsor; see verification-rules.md."
+        },
+        "authority_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "trusted_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 150,
+          "description": "Registry name for trusted_registry (use the query's suggested_source), otherwise null."
+        }
+      }
+    },
+    "eligibility_node": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "oneOf": [
+        {
+          "required": [
+            "requirement"
+          ],
+          "properties": {
+            "requirement": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "required": [
+            "all"
+          ],
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/eligibility_node"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "required": [
+            "any"
+          ],
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/eligibility_node"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "required": [
+            "not"
+          ],
+          "properties": {
+            "not": {
+              "$ref": "#/$defs/eligibility_node"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field",
+        "operator",
+        "value",
+        "hard",
+        "description",
+        "evidence"
+      ],
+      "properties": {
+        "field": {
+          "enum": [
+            "student.location.state",
+            "student.location.county",
+            "student.location.city",
+            "student.location.high_school",
+            "student.location.school_district",
+            "student.academic_level",
+            "student.graduation_year",
+            "student.entry_term",
+            "student.citizenship",
+            "student.degree_level",
+            "student.search_mode",
+            "student.academics.intended_major",
+            "student.academics.unweighted_gpa",
+            "student.academics.gpa_scale",
+            "student.academics.weighted_gpa",
+            "student.academics.sat",
+            "student.academics.act",
+            "student.target_colleges",
+            "student.affiliations.clubs",
+            "student.affiliations.professional",
+            "student.affiliations.employer",
+            "student.affiliations.credit_union",
+            "student.affiliations.military",
+            "student.first_generation",
+            "student.financial_need",
+            "student.sai",
+            "student.identity.ethnicity",
+            "student.identity.lgbtq",
+            "student.identity.disability",
+            "student.identity.religion",
+            "student.identity.other"
+          ]
+        },
+        "operator": {
+          "enum": [
+            "eq",
+            "neq",
+            "gte",
+            "lte",
+            "in",
+            "not_in",
+            "contains",
+            "contains_any",
+            "overlaps",
+            "truthy"
+          ]
+        },
+        "value": {},
+        "hard": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      }
+    }
+  },
+  "description": "Candidate records for scholarship_api.add_candidate and pipeline.py evaluate. The evaluator enforces further rules described in verification-rules.md: source proof, discovery-domain limits, current cycle, deadlines, and evidence age."
+}
