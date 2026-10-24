@@ -292,7 +292,7 @@ def test_each_student_gets_their_own_profile_and_workspace(profile_home: Path):
     assert default["profile"].endswith("scholarship-profile.json") and default["student"] == "default"
     runs = api.list_runs()["runs"]
     assert {run["student"] for run in runs} == {"jordan", "default"}
-    resumed = api.start_run(resume=first["workdir"].rsplit("/", 1)[1])
+    resumed = api.start_run(resume=Path(first["workdir"]).name)
     assert resumed["workdir"] == first["workdir"] and resumed["student"] == "jordan"
 
 
