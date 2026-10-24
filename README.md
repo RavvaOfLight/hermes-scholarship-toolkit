@@ -1,5 +1,14 @@
 # Hermes Scholarship Toolkit
 
+[![tests](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/actions/workflows/tests.yml)
+[![License: PolyForm Noncommercial 1.0.0](https://img.shields.io/badge/license-PolyForm%20Noncommercial%201.0.0-blue)](LICENSE)
+
+**Find scholarships. Track them. Fill the forms.**
+
+[![Preview: the research report, the phone board, and the autofill side panel](docs/media/preview.gif)](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/releases/tag/v1.2.0)
+
+▶ **[Watch the one-minute video](https://github.com/RavvaOfLight/hermes-scholarship-toolkit/releases/tag/v1.2.0)** (shown with a fictional student; no real personal data).
+
 Tools for finding, tracking, and applying for U.S. scholarships with
 [Hermes Agent](https://github.com/NousResearch/hermes-agent):
 
